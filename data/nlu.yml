@@ -89,3 +89,92 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+# ***********************************************
+# ***********************************************
+# ***********************************************
+
+- intent: order_something_generic
+  examples: |
+    - I’d like to order something
+    - I want to order something
+    - Can I order something?
+    - Order something
+
+- intent: order_something
+  examples: |
+    - I’d like to order [pasta](food)
+    - I want to order [rice](food)
+    - Can I order a [pizza](food)?
+    - I’d like to order a plate of [pasta](food)
+    - Order a [pizza](food)
+
+- intent: choose_time
+  examples: |
+    - For the [14:00](time)
+    - [2 pm](time)
+    - [15](time)
+
+- intent: edit_order
+  examples: |
+    - I want to edit my order
+    - Can I edit my order?
+    - I'd like to edit my order
+    - I want to correct my order
+    - Can I correct my order?
+    - I'd like to correct my order
+    - Edit order
+
+- intent: delete_order
+  examples: |
+    - I want to delete my order
+    - Can I delete my order?
+    - I'd like to delete my order
+    - I want to cancel my order
+    - Can I cancel my order?
+    - I'd like to cancel my order
+    - Delete order
+
+- intent: order_id
+  examples: |
+    - The order ID is [AA14512](order_id)
+    - The ID is [AA45729](order_id)
+    - [AA27417](order_id)
+
+- lookup: food
+  examples: |
+    - Pasta
+    - Pizza
+    - Rice
+    - Soup
+    - Meat
+    - Salmon
+    - Tuna
+    - Vegetables
+    - Eggs
+    - Drinks
+
+- lookup: time
+  examples: | # TODO: check time with regex
+    - 14:00
+    - 16:00
+    - 8:00
+    - 9
+    - 18:30
+    - 2 pm
+    - 10 am
+    - 11 pm
+    - 11pm
+    - 8am
+    - 10am
+    - 9pm
+    - 12pm
+
+- lookup: order_id
+  examples: | # TODO: check order ID with regex
+    - AA15475
+    - AA68476
+    - AA49239
+    - AA05439
+    - AA78541
+    - AA74114

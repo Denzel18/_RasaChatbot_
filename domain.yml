@@ -8,6 +8,49 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - order_something_generic
+  - order_something
+  - choose_time
+  - edit_order
+  - delete_order
+  - order_id
+
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_order_info
+- utter_order
+- utter_time
+- utter_order_id
+- utter_edit
+- utter_delete
+- action_save_order
+
+entities:
+  - food
+  - time
+  - order_id
+
+slots:
+   food:
+     type: text
+     mappings:
+     - type: from_entity
+       entity: food
+   time:
+     type: text # TODO: custom type?
+     mappings:
+     - type: from_entity
+       entity: time
+   order_id:
+     type: text # TODO: custom type?
+     mappings:
+     - type: from_entity
+       entity: order_id
 
 responses:
   utter_greet:
@@ -28,6 +71,24 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_order_info:
+  - text: 'Of course! Tell me what do you want to order.'
+
+  utter_order:
+  - text: 'OK.'
+
+  utter_time:
+  - text: 'Which time do you prefer?'
+
+  utter_order_id:
+    - text: 'Of course! Tell me what is the order ID.'
+
+  utter_edit:
+    - text: 'The order has been successfully edited.'
+
+  utter_delete:
+    - text: 'The order has been successfully deleted.'
 
 session_config:
   session_expiration_time: 60

@@ -28,3 +28,75 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+# ***********************************************
+# ***********************************************
+# ***********************************************
+
+- story: order path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order_something_generic
+  - action: utter_order_info
+  - intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+  - action: action_save_order
+
+- story: order path 2
+  steps:
+  - intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+  - action: action_save_order
+
+- story: edit path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order_something_generic
+  - action: utter_order_info
+  - intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+  - action: action_save_order
+  - intent: edit_order
+  - action: utter_order_id
+  - intent: order_id
+  - action: utter_edit
+
+- story: edit path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: edit_order
+  - action: utter_order_id
+  - intent: order_id
+  - action: utter_edit
+
+- story: edit path 3
+  steps:
+  - intent: edit_order
+  - action: utter_order_id
+  - intent: order_id
+  - action: utter_edit
+
+- story: delete path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: delete_order
+  - action: utter_order_id
+  - intent: order_id
+  - action: utter_delete
+
+- story: delete path 2
+  steps:
+  - intent: delete_order
+  - action: utter_order_id
+  - intent: order_id
+  - action: utter_delete
