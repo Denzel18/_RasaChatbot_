@@ -100,3 +100,65 @@ stories:
   - action: utter_order_id
   - intent: order_id
   - action: utter_delete
+
+- story: intolerant path
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: intolerant
+  - action: utter_intolerant
+  - action: utter_intolerant_info
+  - intent: order_something_generic
+  - action: utter_order_info
+  - intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+  - action: action_save_order
+
+
+- story: intolerant path 2 
+  steps: 
+  - intent: intolerant
+  - action: utter_intolerant
+
+- story: type diet path
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: type_diet
+  - action: utter_type_diet
+  - intent: order_something_generic
+  - action: utter_order_info
+  - intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+  - action: action_save_order
+
+
+- story: type diet path 2
+  steps: 
+  - intent: type_diet
+  - action: utter_type_diet
+
+
+- story: preferences story 
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: preferences
+  - action: utter_suggest
+  - intent: order_something_generic
+  - action: utter_order_info
+  - intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+  - action: action_save_order
+
+
+- story: preferences story 2
+  steps: 
+  - intent: preferences
+  - action: utter_suggest

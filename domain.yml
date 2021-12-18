@@ -14,6 +14,9 @@ intents:
   - edit_order
   - delete_order
   - order_id
+  - intolerant
+  - type_diet
+  - preferences
 
 actions:
 - utter_greet
@@ -29,11 +32,17 @@ actions:
 - utter_edit
 - utter_delete
 - action_save_order
+- utter_intolerant
+- utter_intolerant_info
+- utter_type_diet
+- utter_preferences
 
 entities:
   - food
   - time
   - order_id
+  - type_diet
+  - intollerance 
 
 slots:
    food:
@@ -89,6 +98,24 @@ responses:
 
   utter_delete:
     - text: 'The order has been successfully deleted.'
+
+  utter_intolerant:
+    - text: 'I will select a plates adapt for you, tell me what kind of intolerance you have ?'
+    - text: 'Please, tell me what kind of intolerance you have'
+    - text: 'What are you intolerant of ?'
+  
+  utter_type_diet:
+    - text: 'I will select a plates adapt for you, which kind of diet you follow ?'
+    - text: 'Which diet do you follow ? '
+  
+  utter_preferences: 
+    - text: 'What would you like eat ?'
+
+  utter_suggest:
+    - text: 'I suggest you to eat a Pizza'
+    - text: 'I suggest you to eat a Pasta'
+    - text: 'I suggest you to eat a Meat'
+
 
 session_config:
   session_expiration_time: 60
