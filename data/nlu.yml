@@ -137,23 +137,30 @@ nlu:
 
 - intent: intolerant
   examples: | 
-    - I'm intolerant 
-    - I have some intolerance 
-    - I can't eat everything 
+    - I'm intolerant [gluten](intolerance)
+    - I'm intolerant [lactoise](intolerance)
+    - I'm intolerant [nuts](intolerance)
+    - I have intolerance of [gluten](intolerance)
+    - I have intolerance of [lactoise](intolerance)
+    - I have intolerance of [nuts](intolerance)
+    - I can't eat [gluten](intolerance)
+    - I can't eat [lactoise](intolerance)
+    - I can't eat [nuts](intolerance)
 
+  
 - intent: type_diet
   examples: | 
-   - I'm vegan 
-   - I'm vegetarian 
-   - I'm omnivorous
+   - I'm [vegan] (diets)
+   - I'm [vegetarian] (diets)
+   - I'm [omnivorous] (diets)
 
 - intent: preferences
   examples: | 
-    - I'd like eat ... 
-    - I prefer ...
-    - I love ...
-    - I want eat ... 
-    - I want try ...
+    - I'd like eat [pasta](food)
+    - I prefer [pizza](food)?
+    - I love [pizza](food)?
+    - I want eat [pasta](food)
+    - I want try [salmone] (food)
 
 - intent: order_id
   examples: |
@@ -189,6 +196,20 @@ nlu:
     - 10am
     - 9pm
     - 12pm
+
+- lookup: diets
+  examples: | 
+    - vegan
+    - vegetarian 
+    - omnivorous
+
+- lookup: intolerances
+  examples: | 
+    - gluten
+    - lactoise  
+    - nuts
+
+
 
 - lookup: order_id
   examples: | # TODO: check order ID with regex

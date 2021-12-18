@@ -42,24 +42,31 @@ entities:
   - time
   - order_id
   - type_diet
-  - intollerance 
+  - intolerance 
 
 slots:
-   food:
+    food:
      type: text
      mappings:
      - type: from_entity
        entity: food
-   time:
+    time:
      type: text # TODO: custom type?
      mappings:
      - type: from_entity
        entity: time
-   order_id:
+    order_id:
      type: text # TODO: custom type?
      mappings:
      - type: from_entity
        entity: order_id
+
+    type_diet:
+     type: text # TODO: custom type?
+     mappings:
+     - type: from_entity
+       entity: type_diet
+
 
 responses:
   utter_greet:
@@ -100,17 +107,11 @@ responses:
     - text: 'The order has been successfully deleted.'
 
   utter_intolerant:
-    - text: 'I will select a plates adapt for you, tell me what kind of intolerance you have ?'
-    - text: 'Please, tell me what kind of intolerance you have'
-    - text: 'What are you intolerant of ?'
+    - text: 'I will select a plates adapt for you'
   
   utter_type_diet:
-    - text: 'I will select a plates adapt for you, which kind of diet you follow ?'
-    - text: 'Which diet do you follow ? '
+    - text: 'I will select a plates adapt for you'
   
-  utter_preferences: 
-    - text: 'What would you like eat ?'
-
   utter_suggest:
     - text: 'I suggest you to eat a Pizza'
     - text: 'I suggest you to eat a Pasta'
