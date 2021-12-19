@@ -53,3 +53,26 @@ class ActionSaveOrder(Action):
         return []
 
     
+class ActionTypeDiet(Action):
+
+    def name(self) -> Text:
+        return 'action_type_diet'
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        # get slots values
+        diet = str(tracker.get_slot('diets'))
+        # check if diets file exists
+        filename = f'./files/{diet}.csv'
+
+        if os.path.exists(filename):
+            # append if already exists
+            file = open(filename, 'a', newline='')
+            dispatcher.utter_message(text=f'We have plates adapt you, please wait a second ({diet})')
+        else:
+            dispatcher.utter_message(text=f'We don\'t have plates adapt you, please call the restaurant ({diet})')
+        return []
+
+    

@@ -107,7 +107,6 @@ stories:
   - action: utter_greet
   - intent: intolerant
   - action: utter_intolerant
-  - action: utter_intolerant_info
   - intent: order_something_generic
   - action: utter_order_info
   - intent: order_something
@@ -128,6 +127,7 @@ stories:
   - action: utter_greet
   - intent: type_diet
   - action: utter_type_diet
+  - action: action_type_diet
   - intent: order_something_generic
   - action: utter_order_info
   - intent: order_something
@@ -141,6 +141,7 @@ stories:
   steps: 
   - intent: type_diet
   - action: utter_type_diet
+  - action: action_type_diet
 
 
 - story: preferences story 
@@ -162,3 +163,5 @@ stories:
   steps: 
   - intent: preferences
   - action: utter_suggest
+
+
