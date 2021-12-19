@@ -17,6 +17,9 @@ intents:
   - intolerant
   - type_diet
   - preferences
+  - type_plate
+  - region_food
+  - preference ingredients 
 
 actions:
 - utter_greet
@@ -36,6 +39,10 @@ actions:
 - utter_type_diet
 - utter_suggest
 - action_type_diet
+- action_region_food
+- action_type_plate_food
+- action_intolerant
+- action_preference_ingredients
 
 entities:
   - food
@@ -43,6 +50,9 @@ entities:
   - order_id
   - diets
   - intolerance 
+  - plates
+  - regions
+  - ingredients
 
 slots:
     food:
@@ -75,7 +85,23 @@ slots:
       - type: from_entity
         entity: intolerance
 
+    regions:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: regions
 
+    plates:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: plates
+
+    ingredients:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: ingredients
 responses:
   utter_greet:
   - text: "Hey! How are you?"

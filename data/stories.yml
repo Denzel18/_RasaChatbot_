@@ -106,7 +106,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: intolerant
-  - action: utter_intolerant
+  - action: action_intolerant
   - intent: order_something_generic
   - action: utter_order_info
   - intent: order_something
@@ -119,7 +119,7 @@ stories:
 - story: intolerant path 2 
   steps: 
   - intent: intolerant
-  - action: utter_intolerant
+  - action: action_intolerant
 
 - story: type diet path
   steps: 
@@ -165,3 +165,66 @@ stories:
   - action: utter_suggest
 
 
+- story: preferences ingredients story 
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: preference ingredients  
+  - action: action_preference_ingredients
+  - intent: order_something_generic
+  - action: utter_order_info
+  - intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+  - action: action_save_order
+
+
+- story: preferences ingredients story 2
+  steps: 
+  - intent: preference ingredients 
+  - action: action_preference_ingredients
+
+
+
+
+- story: preferences region story 
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: region_food
+  - action: action_region_food
+  - intent: order_something_generic
+  - action: utter_order_info
+  - intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+  - action: action_save_order
+
+
+- story: preferences region story 2
+  steps: 
+  - intent: region_food
+  - action: action_region_food
+
+
+- story: preferences type plate story 
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: type_plate
+  - action: action_type_plate_food
+  - intent: order_something_generic
+  - action: utter_order_info
+  - intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+  - action: action_save_order
+
+
+- story: preferences type plate  story 2
+  steps: 
+  - intent: type_plate
+  - action: action_type_plate_food

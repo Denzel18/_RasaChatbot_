@@ -15,6 +15,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+
 - intent: goodbye
   examples: |
     - cu
@@ -27,6 +28,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+
 - intent: affirm
   examples: |
     - yes
@@ -35,6 +37,7 @@ nlu:
     - of course
     - that sounds good
     - correct
+
 - intent: deny
   examples: |
     - no
@@ -44,6 +47,7 @@ nlu:
     - don't like that
     - no way
     - not really
+
 - intent: mood_great
   examples: |
     - perfect
@@ -60,6 +64,7 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -76,18 +81,21 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
 - intent: order_something_generic
   examples: |
     - I’d like to order something
     - I want to order something
     - Can I order something?
     - Order something
+
 - intent: order_something
   examples: |
     - I’d like to order [pasta](food)
@@ -95,11 +103,13 @@ nlu:
     - Can I order a [pizza](food)?
     - I’d like to order a plate of [pasta](food)
     - Order a [pizza](food)
+  
 - intent: choose_time
   examples: |
     - For the [14:00](time)
     - [2 pm](time)
     - [15](time)
+
 - intent: edit_order
   examples: |
     - I want to edit my order
@@ -109,6 +119,7 @@ nlu:
     - Can I correct my order?
     - I'd like to correct my order
     - Edit order
+
 - intent: delete_order
   examples: |
     - I want to delete my order
@@ -118,6 +129,7 @@ nlu:
     - Can I cancel my order?
     - I'd like to cancel my order
     - Delete order
+
 - intent: intolerant
   examples: |
     - I'm intolerant [gluten](intolerance)
@@ -129,24 +141,46 @@ nlu:
     - I can't eat [gluten](intolerance)
     - I can't eat [lactoise](intolerance)
     - I can't eat [nuts](intolerance)
+
 - intent: type_diet
   examples: |
     - I'm [vegan](diets)
     - I'm [vegetarian](diets)
     - I'm [omnivorous](diets)
     - i'm [vegan](diets)
+
+- intent: type_plate
+  examples: |
+    - I want a [secondo](plates)
+    - I want a [primo](plates) 
+    - I want a [contorno](plates)
+    - I want a [dolce](plates) 
+
+- intent: region_food
+  examples: |
+    - I want to eat some tipical food from [lombardia](regions)
+    - A tipical food from [marche](regions)
+    - I want to try something from [emilia romagna](regions)
+
 - intent: preferences
   examples: |
     - I'd like eat [pasta](food)
     - I prefer [pizza](food)?
     - I love [pizza](food)?
     - I want eat [pasta](food)
-    - I want try [salmone] (food)
+    - I want try [salmone](food)
+
+
+- intent: preference ingredients 
+  examples: | 
+    - I'd like eat something with [pomodoro](ingredients)
+
 - intent: order_id
   examples: |
     - The order ID is [AA14512](order_id)
     - The ID is [AA45729](order_id)
     - [AA27417](order_id)
+
 - lookup: food
   examples: |
     - Pasta
@@ -159,6 +193,7 @@ nlu:
     - Vegetables
     - Eggs
     - Drinks
+
 - lookup: time
   examples: |
     - 14:00
@@ -174,16 +209,19 @@ nlu:
     - 10am
     - 9pm
     - 12pm
+
 - lookup: diets
   examples: |
     - vegan
     - vegetarian
     - omnivorous
+
 - lookup: intolerances
   examples: |
     - gluten
     - lactoise
     - nuts
+
 - lookup: order_id
   examples: |
     - AA15475
@@ -192,3 +230,36 @@ nlu:
     - AA05439
     - AA78541
     - AA74114
+
+- lookup: plates
+  examples: |
+    - primo
+    - secondo 
+    - dolce
+    - contorno 
+
+- lookup: regions
+  examples: |
+    - marche 
+    - molise 
+    - emilia romagna
+    - abruzzo 
+    - basilicata
+    - calabria
+    - campania
+    - emilia romagna
+    - friuli venezia giuglia
+    - lazio
+    - liguria
+    - lombardia 
+
+- lookup: ingredients
+  examples: | 
+    - pomodoro 
+    - pasta 
+    - parmiggiano 
+    - agnello 
+    - salsiccia 
+    - peperoncino 
+    - pecorino
+
