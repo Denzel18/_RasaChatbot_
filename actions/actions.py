@@ -68,11 +68,25 @@ class ActionTypeDiet(Action):
         filename = f'./files/{diet}.csv'
 
         if os.path.exists(filename):
-            # append if already exists
-            file = open(filename, 'a', newline='')
-            dispatcher.utter_message(text=f'We have plates adapt you, please wait a second ({diet})')
+            # read if already exists
+            file = open(filename, 'r')
+            reader = csv.reader(file)
+
+            rows = list(reader)
+            n_rows = len(rows)
+            line_select = randint(0, n_rows-1)
+            
+            #reader.readline(line_select)
+            dispatcher.utter_message(text=f'We have plates adapt you, please wait a second ({diet, line_select})')
+            dispatcher.utter_message(text=f'We suggest you: ({rows[line_select]})')
+
+
         else:
             dispatcher.utter_message(text=f'We don\'t have plates adapt you, please call the restaurant ({diet})')
         return []
 
-    
+
+
+
+#Repo API for diets API https://www.programmableweb.com/news/10-most-popular-food-apis-2021/brief/2021/05/05
+#API 1 : https://spoonacular.com/food-api

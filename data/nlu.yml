@@ -131,9 +131,9 @@ nlu:
     - I can't eat [nuts](intolerance)
 - intent: type_diet
   examples: |
-    - I'm [vegan] (diets)
-    - I'm [vegetarian] (diets)
-    - I'm [omnivorous] (diets)
+    - I'm [vegan](diets)
+    - I'm [vegetarian](diets)
+    - I'm [omnivorous](diets)
     - i'm [vegan](diets)
 - intent: preferences
   examples: |
