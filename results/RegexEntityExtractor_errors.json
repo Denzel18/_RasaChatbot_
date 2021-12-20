@@ -1,0 +1,338 @@
+[
+  {
+    "text": "For the 14:00",
+    "entities": [
+      {
+        "start": 8,
+        "end": 13,
+        "value": "14:00",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 8,
+        "end": 13,
+        "confidence_entity": 0.7370214462280273,
+        "value": "14:00",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "2:00 PM",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "2:00 PM",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.7358354926109314,
+        "value": "2:00 PM",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "10:00AM",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "10:00AM",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.9943601489067078,
+        "value": "10:00AM",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "For the 23:00",
+    "entities": [
+      {
+        "start": 8,
+        "end": 13,
+        "value": "23:00",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 8,
+        "end": 13,
+        "confidence_entity": 0.7370214462280273,
+        "value": "23:00",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "12:00 AM",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "12:00 AM",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.7311828136444092,
+        "value": "12:00 AM",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "1:00AM",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "1:00AM",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.9943601489067078,
+        "value": "1:00AM",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I'm intolerant gluten",
+    "entities": [
+      {
+        "start": 15,
+        "end": 21,
+        "value": "gluten",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 15,
+        "end": 21,
+        "confidence_entity": 0.9983761310577393,
+        "value": "gluten",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I'm intolerant lactoise",
+    "entities": [
+      {
+        "start": 15,
+        "end": 23,
+        "value": "lactoise",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 15,
+        "end": 23,
+        "confidence_entity": 0.9983195662498474,
+        "value": "lactoise",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I'm intolerant nuts",
+    "entities": [
+      {
+        "start": 15,
+        "end": 19,
+        "value": "nuts",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 15,
+        "end": 19,
+        "confidence_entity": 0.9982870221138,
+        "value": "nuts",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I have intolerance of gluten",
+    "entities": [
+      {
+        "start": 22,
+        "end": 28,
+        "value": "gluten",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 22,
+        "end": 28,
+        "confidence_entity": 0.9982768297195435,
+        "value": "gluten",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I have intolerance of lactoise",
+    "entities": [
+      {
+        "start": 22,
+        "end": 30,
+        "value": "lactoise",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 22,
+        "end": 30,
+        "confidence_entity": 0.9981964230537415,
+        "value": "lactoise",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I have intolerance of nuts",
+    "entities": [
+      {
+        "start": 22,
+        "end": 26,
+        "value": "nuts",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 22,
+        "end": 26,
+        "confidence_entity": 0.9981644749641418,
+        "value": "nuts",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I can't eat gluten",
+    "entities": [
+      {
+        "start": 12,
+        "end": 18,
+        "value": "gluten",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 12,
+        "end": 18,
+        "confidence_entity": 0.998284637928009,
+        "value": "gluten",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I can't eat lactoise",
+    "entities": [
+      {
+        "start": 12,
+        "end": 20,
+        "value": "lactoise",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 12,
+        "end": 20,
+        "confidence_entity": 0.9981983304023743,
+        "value": "lactoise",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I can't eat nuts",
+    "entities": [
+      {
+        "start": 12,
+        "end": 16,
+        "value": "nuts",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 12,
+        "end": 16,
+        "confidence_entity": 0.9981637597084045,
+        "value": "nuts",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I want try salmone",
+    "entities": [
+      {
+        "start": 11,
+        "end": 18,
+        "value": "salmone",
+        "entity": "food"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "food",
+        "start": 11,
+        "end": 18,
+        "confidence_entity": 0.9982878565788269,
+        "value": "salmone",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

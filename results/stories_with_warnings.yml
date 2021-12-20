@@ -1,0 +1,19 @@
+version: "3.0"
+stories:
+- story: new order 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: order_something_generic
+  - action: utter_order_info  # predicted: action_unlikely_intent
+  - intent: order_something
+    entities:
+    - food: pizza
+  - slot_was_set:
+    - food: pizza
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+    entities:
+    - time: 11:00PM
+  - slot_was_set:
+    - time: 11:00PM
+  - action: action_save_order

@@ -107,8 +107,11 @@ nlu:
 - intent: choose_time
   examples: |
     - For the [14:00](time)
-    - [2 pm](time)
-    - [15](time)
+    - [2:00 PM](time)
+    - [10:00AM](time)
+    - For the [23:00](time)
+    - [12:00 AM](time)
+    - [1:00AM](time)
 
 - intent: edit_order
   examples: |
@@ -120,6 +123,23 @@ nlu:
     - I'd like to correct my order
     - Edit order
 
+- intent: edit_order_with_id
+  examples: |
+    - I want to edit my order with ID [AA14512](order_id)
+    - Can I edit my order with ID [AA12475](order_id)?
+    - I'd like to edit my order [AA24785](order_id)
+    - I want to correct my order [AA12014](order_id)
+    - Can I correct my order with ID [AA14798](order_id)?
+    - I'd like to correct my order [AA34256](order_id)
+    - Edit order [AA27645](order_id)
+    - I want to edit my order [AA53453](order_id)
+    - Can I edit my order [AA98465](order_id)?
+    - I'd like to edit my order with ID [AA76534](order_id)
+    - I want to correct my order with ID [AA98734](order_id)
+    - Can I correct my order [AA22345](order_id)?
+    - I'd like to correct my order with ID [AA11234](order_id)
+    - Edit order with ID [AA98097](order_id)
+
 - intent: delete_order
   examples: |
     - I want to delete my order
@@ -129,6 +149,23 @@ nlu:
     - Can I cancel my order?
     - I'd like to cancel my order
     - Delete order
+
+- intent: delete_order_with_id
+  examples: |
+    - I want to delete my order with ID [AA24354](order_id)
+    - Can I delete my order with ID [AA14578](order_id)?
+    - I'd like to delete my order [AA12478](order_id)
+    - I want to cancel my order with ID [AA02147](order_id)
+    - Can I cancel my order [AA12657](order_id)?
+    - I'd like to cancel my order [AA64569](order_id)
+    - Delete order [AA26758](order_id)
+    - I want to delete my order [AA64532](order_id)
+    - Can I delete my order [AA64798](order_id)?
+    - I'd like to delete my order with ID [AA42536](order_id)
+    - I want to cancel my order [AA98752](order_id)
+    - Can I cancel my order with ID [AA09865](order_id)?
+    - I'd like to cancel my order with ID [AA54546](order_id)
+    - Delete order with ID [AA54367](order_id)
 
 - intent: intolerant
   examples: |
@@ -171,9 +208,10 @@ nlu:
     - I want try [salmone](food)
 
 
-- intent: preference ingredients 
+- intent: preference_ingredients
   examples: | 
     - I'd like eat something with [pomodoro](ingredients)
+    - Can I eat something with [pomodoro](ingredients)?
 
 - intent: order_id
   examples: |
@@ -194,21 +232,10 @@ nlu:
     - Eggs
     - Drinks
 
-- lookup: time
+- regex: time
   examples: |
-    - 14:00
-    - 16:00
-    - 8:00
-    - 9
-    - 18:30
-    - 2 pm
-    - 10 am
-    - 11 pm
-    - 11pm
-    - 8am
-    - 10am
-    - 9pm
-    - 12pm
+    - ^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$
+    - /((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))/
 
 - lookup: diets
   examples: |
@@ -222,14 +249,9 @@ nlu:
     - lactoise
     - nuts
 
-- lookup: order_id
+- regex: order_id
   examples: |
-    - AA15475
-    - AA68476
-    - AA49239
-    - AA05439
-    - AA78541
-    - AA74114
+    - AA\d{5}
 
 - lookup: plates
   examples: |

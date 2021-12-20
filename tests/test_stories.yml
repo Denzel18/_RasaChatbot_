@@ -89,3 +89,75 @@ stories:
       are you a bot?
     intent: bot_challenge
   - action: utter_iamabot
+
+- story: new order 1
+  steps:
+  - user: |
+      Can I order something?
+    intent: order_something_generic
+  - action: utter_order_info
+  - user: |
+      Can I order a [pizza]{"entity": "food"}?
+    intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - user: |
+      [11:00PM]{"entity": "time"}
+    intent: choose_time
+  - action: action_save_order
+
+- story: new order 2
+  steps:
+  - user: |
+      Can I order a [pizza]{"entity": "food"}?
+    intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - user: |
+      [10:00 PM]{"entity": "time"}
+    intent: choose_time
+  - action: action_save_order
+
+- story: edit 1
+  steps:
+  - user: |
+      Can I edit my order [AA92660]{"entity": "order_id"}?
+    intent: edit_order_with_id
+  - action: utter_new_time
+  - user: |
+      [22:00]{"entity": "time"}
+    intent: choose_time
+  - action: action_edit_order
+
+- story: edit 2
+  steps:
+  - user: |
+      Can I edit my order?
+    intent: edit_order
+  - action: utter_order_id
+  - user: |
+      [AA92660]{"entity": "order_id"}
+    intent: order_id
+  - action: utter_new_time
+  - user: |
+      [23:00]{"entity": "time"}
+    intent: choose_time
+  - action: action_edit_order
+
+- story: delete 1
+  steps:
+  - user: |
+      Can I delete my order [AA92661]{"entity": "order_id"}?
+    intent: delete_order_with_id
+  - action: action_delete_order
+
+- story: delete 2
+  steps:
+  - user: |
+      Can I delete my order?
+    intent: delete_order
+  - action: utter_order_id
+  - user: |
+      [AA92662]{"entity": "order_id"}
+    intent: order_id
+  - action: action_delete_order

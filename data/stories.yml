@@ -67,7 +67,9 @@ stories:
   - intent: edit_order
   - action: utter_order_id
   - intent: order_id
-  - action: utter_edit
+  - action: utter_new_time
+  - intent: choose_time
+  - action: action_edit_order
 
 - story: edit path 2
   steps:
@@ -76,14 +78,25 @@ stories:
   - intent: edit_order
   - action: utter_order_id
   - intent: order_id
-  - action: utter_edit
+  - action: utter_new_time
+  - intent: choose_time
+  - action: action_edit_order
 
 - story: edit path 3
   steps:
   - intent: edit_order
   - action: utter_order_id
   - intent: order_id
-  - action: utter_edit
+  - action: utter_new_time
+  - intent: choose_time
+  - action: action_edit_order
+
+- story: edit path 4
+  steps:
+  - intent: edit_order_with_id
+  - action: utter_new_time
+  - intent: choose_time
+  - action: action_edit_order
 
 - story: delete path 1
   steps:
@@ -92,14 +105,19 @@ stories:
   - intent: delete_order
   - action: utter_order_id
   - intent: order_id
-  - action: utter_delete
+  - action: action_delete_order
 
 - story: delete path 2
   steps:
   - intent: delete_order
   - action: utter_order_id
   - intent: order_id
-  - action: utter_delete
+  - action: action_delete_order
+
+- story: delete path 3
+  steps:
+  - intent: delete_order_with_id
+  - action: action_delete_order
 
 - story: intolerant path
   steps: 
@@ -169,7 +187,7 @@ stories:
   steps: 
   - intent: greet
   - action: utter_greet
-  - intent: preference ingredients  
+  - intent: preference_ingredients
   - action: action_preference_ingredients
   - intent: order_something_generic
   - action: utter_order_info
@@ -182,7 +200,7 @@ stories:
 
 - story: preferences ingredients story 2
   steps: 
-  - intent: preference ingredients 
+  - intent: preference_ingredients
   - action: action_preference_ingredients
 
 
