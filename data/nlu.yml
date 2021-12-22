@@ -188,10 +188,10 @@ nlu:
 
 - intent: type_plate
   examples: |
-    - I want a [secondo](plates)
-    - I want a [primo](plates) 
-    - I want a [contorno](plates)
-    - I want a [dolce](plates) 
+    - I want a [second dish](plates)
+    - I want a [main dish](plates) 
+    - I want a [side dish](plates)
+    - I want a [dessert](plates) 
 
 - intent: region_food
   examples: |
@@ -205,7 +205,7 @@ nlu:
     - I prefer [pizza](food)?
     - I love [pizza](food)?
     - I want eat [pasta](food)
-    - I want try [salmone](food)
+    - I want try [salmon](food)
 
 
 - intent: preference_ingredients
@@ -255,10 +255,10 @@ nlu:
 
 - lookup: plates
   examples: |
-    - primo
-    - secondo 
-    - dolce
-    - contorno 
+    - main dish
+    - second dish 
+    - dessert
+    - side dish 
 
 - lookup: regions
   examples: |
@@ -277,11 +277,11 @@ nlu:
 
 - lookup: ingredients
   examples: | 
-    - pomodoro 
+    - tomato 
     - pasta 
     - parmiggiano 
-    - agnello 
-    - salsiccia 
-    - peperoncino 
-    - pecorino
+    - lamb 
+    - sausage 
+    - chilli pepper 
+    - cheese
 

@@ -1,6 +1,6 @@
 version: "3.0"
 stories:
-- story: new order 1 (.\tests\test_stories.yml)
+- story: new order 1 (./tests/test_stories.yml)
   steps:
   - intent: order_something_generic
   - action: utter_order_info  # predicted: action_unlikely_intent
@@ -16,4 +16,51 @@ stories:
     - time: 11:00PM
   - slot_was_set:
     - time: 11:00PM
+  - action: action_save_order
+- story: intolerant path (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: intolerant
+    entities:
+    - intolerance: gluten
+  - slot_was_set:
+    - intolerance: gluten
+  - action: action_intolerant
+  - intent: order_something
+    entities:
+    - food: pizza
+  - slot_was_set:
+    - food: pizza
+  - action: utter_order  # predicted: action_unlikely_intent
+  - action: utter_time
+  - intent: choose_time
+    entities:
+    - time: 10:00 PM
+  - slot_was_set:
+    - time: 10:00 PM
+  - action: action_save_order
+- story: type diet path (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: type_diet
+    entities:
+    - diets: vegan
+  - slot_was_set:
+    - diets: vegan
+  - action: utter_type_diet
+  - action: action_type_diet
+  - intent: order_something
+    entities:
+    - food: pizza
+  - slot_was_set:
+    - food: pizza
+  - action: utter_order  # predicted: action_unlikely_intent
+  - action: utter_time
+  - intent: choose_time
+    entities:
+    - time: 10:00 PM
+  - slot_was_set:
+    - time: 10:00 PM
   - action: action_save_order

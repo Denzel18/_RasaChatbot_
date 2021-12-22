@@ -1,11 +1,4 @@
 {
-  "time": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 5,
-    "confused_with": {}
-  },
   "order_id": {
     "precision": 0.0,
     "recall": 0.0,
@@ -13,7 +6,49 @@
     "support": 4,
     "confused_with": {}
   },
+  "intolerance": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "ingredients": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 1,
+    "confused_with": {}
+  },
+  "regions": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 1,
+    "confused_with": {}
+  },
+  "diets": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "time": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 9,
+    "confused_with": {}
+  },
   "food": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "plates": {
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
@@ -24,18 +59,18 @@
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
-    "support": 11
+    "support": 24
   },
   "macro avg": {
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
-    "support": 11
+    "support": 24
   },
   "weighted avg": {
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
-    "support": 11
+    "support": 24
   }
 }

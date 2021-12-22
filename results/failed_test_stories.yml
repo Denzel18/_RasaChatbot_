@@ -1,27 +1,11 @@
 version: "3.0"
 stories:
-- story: edit 1 (.\tests\test_stories.yml)
-  steps:
-  - intent: edit_order_with_id  # predicted: edit_order: Can I edit my order [AA92660](order_id)[AA92660](order_id)?
-    entities:
-    - order_id: AA92660
-    - order_id: AA92660
-  - slot_was_set:
-    - order_id: AA92660
-  - action: utter_new_time
-  - intent: choose_time
-    entities:
-    - time: 22:00
-  - slot_was_set:
-    - time: 22:00
-  - action: action_edit_order
-- story: edit 2 (.\tests\test_stories.yml)
+- story: edit 2 (./tests/test_stories.yml)
   steps:
   - intent: edit_order
   - action: utter_order_id
-  - intent: order_id  # predicted: nlu_fallback: [AA92660](order_id)[AA92660](order_id)
+  - intent: order_id  # predicted: delete_order_with_id: [AA92660](order_id)
     entities:
-    - order_id: AA92660
     - order_id: AA92660
   - slot_was_set:
     - order_id: AA92660
@@ -32,23 +16,20 @@ stories:
   - slot_was_set:
     - time: 23:00
   - action: action_edit_order
-- story: delete 1 (.\tests\test_stories.yml)
-  steps:
-  - intent: delete_order_with_id  # predicted: delete_order: Can I delete my order [AA92661](order_id)[AA92661](order_id)?
-    entities:
-    - order_id: AA92661
-    - order_id: AA92661
-  - slot_was_set:
-    - order_id: AA92661
-  - action: action_delete_order
-- story: delete 2 (.\tests\test_stories.yml)
+- story: delete 2 (./tests/test_stories.yml)
   steps:
   - intent: delete_order
   - action: utter_order_id
-  - intent: order_id  # predicted: nlu_fallback: [AA92662](order_id)[AA92662](order_id)
+  - intent: order_id  # predicted: delete_order_with_id: [AA92662](order_id)
     entities:
-    - order_id: AA92662
     - order_id: AA92662
   - slot_was_set:
     - order_id: AA92662
   - action: action_delete_order
+- story: preferences ingredients story 2 (./tests/test_stories.yml)
+  steps:
+  - intent: preference_ingredients  # predicted: preference_ingredients: I'd like eat something with tomato
+    entities: []
+  - slot_was_set:
+    - ingredients: tomato
+  - action: action_preference_ingredients

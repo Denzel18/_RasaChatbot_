@@ -161,3 +161,99 @@ stories:
       [AA92662]{"entity": "order_id"}
     intent: order_id
   - action: action_delete_order
+
+
+
+- story: intolerant path
+  steps: 
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      I'm intolerant [gluten]{"entity":"intolerance"}
+    intent: intolerant
+  - action: action_intolerant
+  - user: |
+      Can I order a [pizza]{"entity": "food"}?
+    intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - user: |
+      [10:00 PM]{"entity": "time"}
+    intent: choose_time
+  - action: action_save_order
+
+
+- story: intolerant path 2
+  steps: 
+  - user: |
+      I'm intolerant [gluten]{"entity":"intolerance"}
+    intent: intolerant
+  - action: action_intolerant
+
+
+- story: type diet path
+  steps: 
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      I'm [vegan]{"entity":"diets"}
+    intent: type_diet
+  - action: utter_type_diet
+  - action: action_type_diet
+  - user: |
+      Can I order a [pizza]{"entity": "food"}?
+    intent: order_something
+  - action: utter_order
+  - action: utter_time
+  - user: |
+      [10:00 PM]{"entity": "time"}
+    intent: choose_time
+  - action: action_save_order
+
+
+- story: type diet path 2
+  steps: 
+  - user: |
+      I'm [vegan]{"entity":"diets"}
+    intent: type_diet
+  - action: utter_type_diet
+  - action: action_type_diet
+
+
+
+- story: preferences story 2
+  steps: 
+  - user: |
+      I'd like eat [pasta]{"entity":"food"}
+    intent: preferences
+  - action: utter_suggest
+
+
+
+- story: preferences ingredients story 2
+  steps: 
+  - user: |
+      I'd like eat something with [tomato]{"entity":"ingredients"}
+    intent: preference_ingredients
+  - action: action_preference_ingredients
+
+
+
+- story: preferences region story 2
+  steps: 
+  - user: |
+      I want to eat some tipical food from [lombardia]{"entity":"regions"}
+    intent: region_food
+  - action: action_region_food
+
+
+- story: preferences type plate  story 2
+  steps: 
+  - user: |
+      I want a [second dish]{"entity":"plates"}
+    intent: type_plate
+  - action: action_type_plate_food

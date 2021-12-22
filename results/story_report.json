@@ -1,33 +1,81 @@
 {
-  "[10:00 PM](time)": {
+  "[23:00](time)": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 1
   },
-  "utter_new_time": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "utter_iamabot": {
+  "[lombardia](regions)": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 1
   },
-  "deny": {
+  "[pizza](food)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "utter_order_id": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 2
   },
-  "action_save_order": {
+  "affirm": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 2
+    "support": 1
+  },
+  "utter_order": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "edit_order_with_id": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7
+  },
+  "utter_time": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "region_food": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "action_region_food": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "action_type_plate_food": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "delete_order_with_id": {
+    "precision": 0.3333333333333333,
+    "recall": 1.0,
+    "f1-score": 0.5,
+    "support": 1
   },
   "utter_order_info": {
     "precision": 1.0,
@@ -35,11 +83,65 @@
     "f1-score": 1.0,
     "support": 1
   },
-  "order_something": {
+  "[pasta](food)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "action_listen": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 43
+  },
+  "utter_new_time": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 2
+  },
+  "[gluten](intolerance)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "edit_order": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_iamabot": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "choose_time": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "order_something": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "[10:00 PM](time)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "order_something_generic": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
   },
   "action_edit_order": {
     "precision": 1.0,
@@ -47,65 +149,29 @@
     "f1-score": 1.0,
     "support": 2
   },
-  "utter_time": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "order_id": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2
-  },
-  "[pizza](food)": {
-    "precision": 0.5,
-    "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "edit_order": {
-    "precision": 0.5,
-    "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 1
-  },
-  "mood_unhappy": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
   "greet": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 5
+    "support": 7
   },
-  "utter_order": {
+  "[AA92660](order_id)": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 2
   },
-  "utter_goodbye": {
+  "action_delete_order": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 4
+    "support": 2
   },
-  "delete_order": {
-    "precision": 0.5,
+  "goodbye": {
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 1
-  },
-  "edit_order_with_id": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
+    "f1-score": 1.0,
+    "support": 2
   },
   "[11:00PM](time)": {
     "precision": 1.0,
@@ -119,7 +185,19 @@
     "f1-score": 1.0,
     "support": 3
   },
-  "order_something_generic": {
+  "utter_type_diet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "type_diet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "[22:00](time)": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -131,91 +209,19 @@
     "f1-score": 1.0,
     "support": 3
   },
-  "[AA92662](order_id)": {
-    "precision": 0.5,
-    "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 1
-  },
-  "None": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 8
-  },
-  "utter_order_id": {
+  "type_plate": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 2
-  },
-  "utter_cheer_up": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "mood_great": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "action_listen": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 29
-  },
-  "goodbye": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "[23:00](time)": {
-    "precision": 0.5,
-    "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 1
-  },
-  "[22:00](time)": {
-    "precision": 0.5,
-    "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 1
-  },
-  "[AA92660](order_id)": {
-    "precision": 0.5,
-    "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "delete_order_with_id": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
     "support": 1
   },
   "[AA92661](order_id)": {
-    "precision": 0.5,
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.6666666666666666,
+    "f1-score": 1.0,
     "support": 1
   },
-  "utter_greet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 5
-  },
-  "choose_time": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4
-  },
-  "affirm": {
+  "action_preference_ingredients": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -227,34 +233,136 @@
     "f1-score": 1.0,
     "support": 1
   },
-  "action_delete_order": {
+  "delete_order": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "preference_ingredients": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "[AA92662](order_id)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "intolerant": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 2
   },
+  "utter_cheer_up": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "order_id": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2
+  },
+  "[tomato](ingredients)": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 1
+  },
+  "mood_unhappy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "action_type_diet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "utter_goodbye": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "deny": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "action_intolerant": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "utter_suggest": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "preferences": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "[vegan](diets)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "mood_great": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "action_save_order": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "[second dish](plates)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
   "micro avg": {
-    "precision": 0.9074074074074074,
-    "recall": 0.8909090909090909,
-    "f1-score": 0.8990825688073394,
-    "support": 110
+    "precision": 0.9874213836477987,
+    "recall": 0.98125,
+    "f1-score": 0.9843260188087775,
+    "support": 160
   },
   "macro avg": {
-    "precision": 0.7948717948717948,
-    "recall": 0.8974358974358975,
-    "f1-score": 0.8290598290598289,
-    "support": 110
+    "precision": 0.9532163742690057,
+    "recall": 0.9649122807017544,
+    "f1-score": 0.956140350877193,
+    "support": 160
   },
   "weighted avg": {
-    "precision": 0.8454545454545455,
-    "recall": 0.8909090909090909,
-    "f1-score": 0.8606060606060606,
-    "support": 110
+    "precision": 0.9770833333333332,
+    "recall": 0.98125,
+    "f1-score": 0.978125,
+    "support": 160
   },
   "conversation_accuracy": {
-    "accuracy": 0.6923076923076923,
-    "correct": 9,
-    "with_warnings": 1,
-    "total": 13
+    "accuracy": 0.8571428571428571,
+    "correct": 18,
+    "with_warnings": 3,
+    "total": 21
   }
 }
