@@ -249,6 +249,8 @@ nlu:
     - water 
     - beer
     - vodka 
+    - tea
+    - coffee
 
 - lookup: receipt
   examples: |

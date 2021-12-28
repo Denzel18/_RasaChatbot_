@@ -7,33 +7,71 @@ session_config:
   carry_over_slots_to_new_session: true
 
 intents:
-  - greet
-  - goodbye 
-  - order_something
-  - choose_time
-  - edit_order_with_id
-  - edit_order_time
-  - edit_order_recipe
-  - edit_order_drink
-  - delete_order_with_id
-  - show_order_id
-  - intolerant
-  - type_diet
-  - type_plate
-  - region_food
-  #- preferences
-  - preference_ingredients
-  #- choose_order_id
-  - alternatives_of_interactions
-  - caloric_intake
+  - greet:
+      use_entities: []
+  - goodbye:
+      use_entities: [] 
+  - order_something:
+      use entities:
+        - food
+  - choose_time:
+      use entities:
+        - time
+  - edit_order_with_id:
+      use entities:
+        - order_id
+  - edit_order_time:
+      use entities:
+        - time
+  - edit_order_recipe:
+      use entities:
+        - food
+  - edit_order_drink:
+      use entities:
+        - drink
+  - delete_order_with_id:
+      use entities:
+        - order_id
+  - show_order_id:
+      use entities:
+        - order_id
+  - intolerant:
+      use entities:
+        - intolerance
+  - type_diet:
+      use entities:
+        - diets
+  - type_plate:
+      use entities:
+        - plates
+  - region_food:
+      use entities:
+        - regions
+  - preference_ingredients:
+      use entities:
+        - ingredients
+  - alternatives_of_interactions:
+      use_entities: []
+  - caloric_intake:
+      use entities:
+        - food
   - suggest_drink:
-      use entities: true
-  - add_drink_to_order
+      use entities:
+        - drink
+  - add_drink_to_order:
+      use entities:
+        - drink
   # suggerimento nuovo piatto
-  - suggest_new_plate
-  - title_receipt
-  - type_plate_receipt 
-  - show_menu
+  - suggest_new_plate: 
+      use_entities: []
+  - title_receipt:
+      use entities:
+        - receipt
+  - type_plate_receipt: 
+      use entities:
+        - plates_suggest
+  - show_menu:
+      use_entities: []
 
 actions:
 - action_save_order
