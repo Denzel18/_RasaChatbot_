@@ -1,159 +1,216 @@
-version: "3.0"
+version: '3.0'
+
+config:
+  store_entities_as_slots: true 
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 
 intents:
   - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - order_something_generic
+  - goodbye 
   - order_something
   - choose_time
-  - edit_order
-  - delete_order
-  - order_id
+  - edit_order_with_id
+  - edit_order_time
+  - edit_order_recipe
+  - edit_order_drink
+  - delete_order_with_id
+  - show_order_id
   - intolerant
   - type_diet
-  - preferences
   - type_plate
   - region_food
+  #- preferences
   - preference_ingredients
-  - edit_order_with_id
-  - delete_order_with_id
+  #- choose_order_id
+  - alternatives_of_interactions
+  - caloric_intake
+  - suggest_drink:
+      use entities: true
+  - add_drink_to_order
+  # suggerimento nuovo piatto
+  - suggest_new_plate
+  - title_receipt
+  - type_plate_receipt 
+  - show_menu
 
 actions:
+- action_save_order
+- action_show_order
+- action_edit_order_time
+- action_edit_order_recipe
+- action_edit_order_drink
+- action_delete_order
+- action_type_diet
+- action_type_plate_food
+- action_region_food
+- action_intolerant
+- action_preference_ingredients
+- action_alternatives_of_interactions
+- action_show_order_id
+- action_caloric_intake 
+- action_suggest_drink
+- action_suggest_new_plate
+- action_show_menu
+- action_suggest_new_receipt
 - utter_greet
-- utter_cheer_up
-- utter_did_that_help
-- utter_happy
 - utter_goodbye
-- utter_iamabot
 - utter_order_info
 - utter_order
 - utter_time
 - utter_order_id
-- action_save_order
-- action_edit_order
-- action_delete_order
 - utter_intolerant
 - utter_type_diet
-- utter_suggest
-- action_type_diet
-- action_region_food
-- action_type_plate_food
-- action_intolerant
-- action_preference_ingredients
-- utter_new_time
+- utter_new_order
+- utter_show_order
+- utter_alternatives_of_interactions
+# drink
+- utter_drink
+# suggerimento nuovo piatto
+- utter_new_plate
+- utter_new_type_plate
+# fallback
+- nlu_fallback
+
+
 
 entities:
-  - food
-  - time
-  - order_id
-  - diets
-  - intolerance 
-  - plates
-  - regions
-  - ingredients
+- food
+- diets
+- plates
+- regions
+- ingredients
+- time 
+- order_id 
+- number 
+- intolerance
+- drink 
+- receipt
+- plates_suggest
+
+
 
 slots:
-    food:
-      type: text
-      mappings:
-      - type: from_entity
-        entity: food
-  
-    time:
-      type: text # TODO: custom type?
-      mappings:
-      - type: from_entity
-        entity: time
-   
-    order_id:
-      type: text # TODO: custom type?
-      mappings:
-      - type: from_entity
-        entity: order_id
-    
-    diets:
-      type: text
-      mappings:
-      - type: from_entity
-        entity: diets
-    
-    intolerance:
-      type: text
-      mappings:
-      - type: from_entity
-        entity: intolerance
+  food:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: food
+  time:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: time
+  order_id:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: order_id
+  number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: number
+  diets:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: diets
+  intolerance:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: intolerance
+  regions:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: regions
+  plates:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: plates
+  ingredients:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: ingredients
+  drink: 
+    type: text
+    influence_conversation: true 
+    mappings: 
+    - type: from_entity
+      entity: drink
+  receipt: 
+    type: text 
+    influence_conversation: true
+    mappings: 
+    - type: from_entity
+      entity: receipt
+  plates_suggest:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: plates_suggest
+      
 
-    regions:
-      type: text
-      mappings:
-      - type: from_entity
-        entity: regions
 
-    plates:
-      type: text
-      mappings:
-      - type: from_entity
-        entity: plates
-
-    ingredients:
-      type: text
-      mappings:
-      - type: from_entity
-        entity: ingredients
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Hey! Welcome to the B.I.G. Pizza & Restaurant!
   utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+  - text: Bye
   utter_order_info:
-  - text: 'Of course! Let me know what would you like to order.'
-
+  - text: Of course! Let me know what would you like to order.
   utter_order:
-  - text: 'OK.'
-
+  - text: OK.
   utter_time:
-  - text: 'Which time would you prefer?'
-
+  - text: Which time would you prefer?
   utter_order_id:
-    - text: 'Of course! Let me know what is your order ID.'
-
+  - text: Of course! Let me know what is your order ID.
   utter_intolerant:
-    - text: 'I will select a plates adapt for you'
-  
+  - text: I will select a plate adapt for you
   utter_type_diet:
-    - text: 'I will select a plates adapt for you'
+  - text: I will select a plate adapt for you
+  utter_show_order:
+  - text: Taking care of your request. Here is what you booked
+  utter_alternatives_of_interactions:
+  - text: |
+      You're welcome. Here is the list of things you can do by us:
+
+       - Visualize the Menu (FORM : Show me the entire menu)
+       - Order a dish (pasta, pizza, second meal, side dish, dessert), (FORM : I would like to order <<dish name>>)
+       - Show order <<ID>> (FORM : show order with ID <<AA....>>)
+       - Edit an Order (FORM : edit order with ID <<AA....>>)
+       - Delete an Order (FORM : delete order with ID <<AA....>>)
+       - Visualize dishes for a category (vegetarian, vegan, omnivorous), (FORM : i'm <<vegan>>)
+       - Visualize dishes acceptable from intolerance (gluten, lactoise, nuts), (FORM : i'm intolerant to <<lactoise>>)
+       - Visualize dishes from specific Region (emilia romagna, toscana, marche, ...), (FORM : I want to try something from <<emilia romagna>>)
+       - Asking a suggestion to you for a plate with choosen ingredient, (FORM : I'd like to eat something with << Specific Ingredient>>)
+       - Ask a suggestion of a drink for the dish you would like to take (BEFORE ORDERING A DISH !), (FORM : Suggest me a drink for <<dish name>>)
+       - Knowing the Caloric Intake of a SPECIFIED dish (BEFORE ORDERING A DISH !), (FORM : I would like to know the caloric intake for <<dish name>>)
+       - Suggest a new dish for the menu (to insert in the future by the owners)
+       - Quit the application using command <</stop>>
+  utter_new_order: 
+  - text: choose and insert the new order FORM where (FORM = edit order time <<09:00>> , edit order recipe <<Tuna>> , edit order drink <<Cola>>)
+  utter_drink:
+  - text: let me know what do you want to drink (formula - add to my order <<water>>)
+  utter_new_plate: 
+  - text: let me know what do you want suggest, Insert title of receipt 
+  utter_new_type_plate: 
+  - text: Let me know what kind of plates is "Main Dish, Dessert, Second Dish, Side Dish"
+  utter_out_of_scope:
+  - text: Sorry, I didn't get what you said. Please rephrase what you said.
   
-  utter_suggest:
-    - text: 'I suggest you to eat a Pizza'
-    - text: 'I suggest you to eat a Pasta'
-    - text: 'I suggest you to eat a Meat'
-
-  utter_new_time:
-    - text: 'Please, let me know what is the new time for the order.'
-    - text: 'Please, let me know at what time do you want your order ready.'
-    - text: 'Could you let me know at what time do you want your order ready?'
-    - text: 'Could you let me know what is the new time of your order?'
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: false

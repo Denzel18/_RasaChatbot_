@@ -5,178 +5,72 @@ nlu:
     - hey
     - hello
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
     - bye bye
     - see you later
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
-- intent: order_something_generic
-  examples: |
-    - I’d like to order something
-    - I want to order something
-    - Can I order something?
-    - Order something
-
 - intent: order_something
   examples: |
-    - I’d like to order [pasta](food)
+    - I would like to order [pasta](food)
     - I want to order [rice](food)
-    - Can I order a [pizza](food)?
-    - I’d like to order a plate of [pasta](food)
+    - Can I order a [soup](food)?
+    - I would like to order a plate of [meat](food)
     - Order a [pizza](food)
-  
+    - [salmon](food)
+    - order [tuna](food)
+
 - intent: choose_time
   examples: |
     - For the [14:00](time)
     - [2:00 PM](time)
-    - [10:00AM](time)
-    - For the [23:00](time)
     - [12:00 AM](time)
-    - [1:00AM](time)
-
-- intent: edit_order
-  examples: |
-    - I want to edit my order
-    - Can I edit my order?
-    - I'd like to edit my order
-    - I want to correct my order
-    - Can I correct my order?
-    - I'd like to correct my order
-    - Edit order
+    - [23](time)
+    - [09:00](time)
 
 - intent: edit_order_with_id
   examples: |
-    - I want to edit my order with ID [AA14512](order_id)
-    - Can I edit my order with ID [AA12475](order_id)?
-    - I'd like to edit my order [AA24785](order_id)
-    - I want to correct my order [AA12014](order_id)
-    - Can I correct my order with ID [AA14798](order_id)?
-    - I'd like to correct my order [AA34256](order_id)
-    - Edit order [AA27645](order_id)
-    - I want to edit my order [AA53453](order_id)
-    - Can I edit my order [AA98465](order_id)?
-    - I'd like to edit my order with ID [AA76534](order_id)
-    - I want to correct my order with ID [AA98734](order_id)
-    - Can I correct my order [AA22345](order_id)?
-    - I'd like to correct my order with ID [AA11234](order_id)
-    - Edit order with ID [AA98097](order_id)
+    - Edit Order with ID [AA98097](order_id)
+    - Edit Order with ID [AA98098](order_id)
 
-- intent: delete_order
+- intent: edit_order_time
   examples: |
-    - I want to delete my order
-    - Can I delete my order?
-    - I'd like to delete my order
-    - I want to cancel my order
-    - Can I cancel my order?
-    - I'd like to cancel my order
-    - Delete order
+    - edit order time [09:00](time)
+    - edit order time [19:00](time)
+
+- intent: edit_order_recipe
+  examples: |
+    - edit order recipe [pasta](food)
+    - edit order recipe [pizza](food)
+
+- intent: edit_order_drink
+  examples: |
+    - edit order drink [wine](drink)
+    - edit order drink [water](drink)
+
 
 - intent: delete_order_with_id
   examples: |
-    - I want to delete my order with ID [AA24354](order_id)
-    - Can I delete my order with ID [AA14578](order_id)?
-    - I'd like to delete my order [AA12478](order_id)
-    - I want to cancel my order with ID [AA02147](order_id)
-    - Can I cancel my order [AA12657](order_id)?
-    - I'd like to cancel my order [AA64569](order_id)
-    - Delete order [AA26758](order_id)
-    - I want to delete my order [AA64532](order_id)
-    - Can I delete my order [AA64798](order_id)?
-    - I'd like to delete my order with ID [AA42536](order_id)
-    - I want to cancel my order [AA98752](order_id)
-    - Can I cancel my order with ID [AA09865](order_id)?
-    - I'd like to cancel my order with ID [AA54546](order_id)
-    - Delete order with ID [AA54367](order_id)
+      - Delete Order with ID [AA54367](order_id)
+      - Delete Order with ID [AA54347](order_id)
+ 
+- intent: show_order_id
+  examples: |
+    - Show order with ID [AA54367](order_id)
+    - Show order with ID [AA54267](order_id)
+
+- intent: show_menu
+  examples: |
+    - Show me the entire menu
+    - print me the menu
+    - Show me the menu 
+    - Let me see the menu
 
 - intent: intolerant
   examples: |
-    - I'm intolerant [gluten](intolerance)
-    - I'm intolerant [lactoise](intolerance)
-    - I'm intolerant [nuts](intolerance)
-    - I have intolerance of [gluten](intolerance)
-    - I have intolerance of [lactoise](intolerance)
-    - I have intolerance of [nuts](intolerance)
-    - I can't eat [gluten](intolerance)
-    - I can't eat [lactoise](intolerance)
+    - I'm intolerant to [gluten](intolerance)
+    - I have an intolerance for [lactoise](intolerance)
     - I can't eat [nuts](intolerance)
 
 - intent: type_diet
@@ -184,40 +78,93 @@ nlu:
     - I'm [vegan](diets)
     - I'm [vegetarian](diets)
     - I'm [omnivorous](diets)
-    - i'm [vegan](diets)
 
 - intent: type_plate
   examples: |
     - I want a [second dish](plates)
-    - I want a [main dish](plates) 
+    - I want a [main dish](plates)
     - I want a [side dish](plates)
-    - I want a [dessert](plates) 
+    - I want a [dessert](plates)
 
 - intent: region_food
   examples: |
     - I want to eat some tipical food from [lombardia](regions)
     - A tipical food from [marche](regions)
     - I want to try something from [emilia romagna](regions)
+    - Visualize dishes from [emilia romagna](regions)
 
-- intent: preferences
-  examples: |
-    - I'd like eat [pasta](food)
-    - I prefer [pizza](food)?
-    - I love [pizza](food)?
-    - I want eat [pasta](food)
-    - I want try [salmon](food)
-
+# - intent: preferences #da rivedere .... 
+#   examples: |
+#     - I want eat [pasta](food)
+#     - I want eat [pizza](food)
 
 - intent: preference_ingredients
-  examples: | 
-    - I'd like eat something with [pomodoro](ingredients)
-    - Can I eat something with [pomodoro](ingredients)?
-
-- intent: order_id
   examples: |
-    - The order ID is [AA14512](order_id)
-    - The ID is [AA45729](order_id)
-    - [AA27417](order_id)
+    - I'd like to eat something with [tomato](ingredients)
+    - Can I eat something with [tomato](ingredients)?
+
+# - intent: choose_order_id #secondo me non serve
+#   examples: |
+#     - The order ID is [AA14512](order_id)
+#     - The ID is [AA45729](order_id)
+#     - [AA27417](order_id)
+
+- intent: alternatives_of_interactions
+  examples: |
+    - What can i do?
+    - Help  
+    - help 
+    - please help
+  
+- intent: caloric_intake
+  examples: |
+    - I would like to know the caloric intake for [pasta al pesto](food)
+    - I would like to know the caloric intake for [pasta e fichi](food)
+
+- intent: suggest_drink
+  examples: |
+    - suggest a drink with [Rice](food)
+    - Suggest me a drink for [Salmon] (food)
+
+- intent: add_drink_to_order
+  examples: | 
+    - add to my order [water](drink)
+    - add to my order [cola](drink)
+    - add to my order [wine](drink)
+
+#suggestion menu
+- intent: suggest_new_plate
+  examples: |
+    - propose new plate
+    - propose new plates
+
+- intent: title_receipt
+  examples: |
+    - title plate suggesting [pasta al pesto](receipt)
+    - title plate suggesting [pasta al cavolo](receipt)
+    - title plate suggesting [pizza margherita](receipt)
+    - title plate suggesting [pasta e fichi](receipt)
+
+- intent: type_plate_receipt
+  examples: |
+    - type plate suggesting [main dish](plates_suggest)
+    - type plate suggesting [side dish](plates_suggest)
+    - type plate suggesting [dessert](plates_suggest)
+    - type plate suggesting [second dish](plates_suggest)
+
+- intent: nlu_fallback
+  examples: |
+    - Quo vado ? 
+    - Bella Zio ...
+
+- regex: order_id
+  examples: |
+    - AA\d{5}
+
+- regex: time
+  examples: |
+    - /((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))/
+    - ^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$
 
 - lookup: food
   examples: |
@@ -230,12 +177,20 @@ nlu:
     - Tuna
     - Vegetables
     - Eggs
-    - Drinks
-
-- regex: time
-  examples: |
-    - ^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$
-    - /((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))/
+    - pasta e fichi  
+    - carbonara 
+    - pasta al pesto 
+    - pizza margherita 
+    - Vegetarian Burrito Bowl with Avocado Crema
+    - Pumpkin Curry Soup
+    - Falafel_burgers
+    - pizza margherita
+    - vegan crostino
+    - vegan lasagna
+    - seitan burger
+    - spaghetti with avocado
+    - patate al forno
+    - insalata finocchi e arance
 
 - lookup: diets
   examples: |
@@ -249,23 +204,26 @@ nlu:
     - lactoise
     - nuts
 
-- regex: order_id
-  examples: |
-    - AA\d{5}
-
 - lookup: plates
   examples: |
     - main dish
-    - second dish 
+    - second dish
     - dessert
-    - side dish 
+    - side dish
+
+- lookup: plates_suggest
+  examples: |
+    - main dish
+    - second dish
+    - dessert
+    - side dish
 
 - lookup: regions
   examples: |
-    - marche 
-    - molise 
+    - marche
+    - molise
     - emilia romagna
-    - abruzzo 
+    - abruzzo
     - basilicata
     - calabria
     - campania
@@ -273,15 +231,38 @@ nlu:
     - friuli venezia giuglia
     - lazio
     - liguria
-    - lombardia 
+    - lombardia
 
 - lookup: ingredients
-  examples: | 
-    - tomato 
-    - pasta 
-    - parmiggiano 
-    - lamb 
-    - sausage 
-    - chilli pepper 
+  examples: |
+    - tomato
+    - parmiggiano
+    - lamb
+    - sausage
+    - chilli pepper
     - cheese
 
+- lookup: drink 
+  examples: |
+    - cola 
+    - wine
+    - water 
+    - beer
+    - vodka 
+
+- lookup: receipt
+  examples: |
+    - pasta e fichi  
+    - spaghetti carbonara 
+    - pasta al pesto 
+    - pizza margherita 
+    - Vegetarian Burrito Bowl with Avocado Crema
+    - Pumpkin Curry Soup
+    - Falafel burgers
+    - pizza margherita
+    - vegan crostino
+    - vegan lasagna
+    - seitan burger
+    - spaghetti with avocado
+    - patate al forno
+    - insalata finocchi e arance

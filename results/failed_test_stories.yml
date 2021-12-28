@@ -1,10 +1,33 @@
 version: "3.0"
 stories:
-- story: edit 2 (./tests/test_stories.yml)
+- story: suggest plate path (./tests/test_stories.yml)
   steps:
-  - intent: edit_order
-  - action: utter_order_id
-  - intent: order_id  # predicted: delete_order_with_id: [AA92660](order_id)
+  - intent: suggest_new_plate
+  - action: utter_new_plate
+  - intent: title_receipt  # predicted: title_receipt: title plate suggesting [pasta al pesto](receipt)
+  - action: utter_new_type_plate
+  - intent: type_plate_receipt  # predicted: type_plate_receipt: type plate suggesting [main dish](plates_suggest)
+  - action: action_suggest_new_receipt
+- story: order path (./tests/test_stories.yml)
+  steps:
+  - intent: order_something
+    entities:
+    - food: pizza
+  - slot_was_set:
+    - food: pizza
+  - action: utter_order
+  - action: utter_time
+  - intent: choose_time
+    entities:
+    - time: 11:00PM
+  - slot_was_set:
+    - time: 11:00PM
+  - action: utter_drink
+  - intent: add_drink_to_order  # predicted: add_drink_to_order: add to my order [cola](drink)
+  - action: action_save_order
+- story: edit order path (./tests/test_stories.yml)
+  steps:
+  - intent: edit_order_with_id
     entities:
     - order_id: AA92660
   - slot_was_set:
@@ -12,24 +35,7 @@ stories:
   - action: utter_new_time
   - intent: choose_time
     entities:
-    - time: 23:00
+    - time: 22:00
   - slot_was_set:
-    - time: 23:00
-  - action: action_edit_order
-- story: delete 2 (./tests/test_stories.yml)
-  steps:
-  - intent: delete_order
-  - action: utter_order_id
-  - intent: order_id  # predicted: delete_order_with_id: [AA92662](order_id)
-    entities:
-    - order_id: AA92662
-  - slot_was_set:
-    - order_id: AA92662
-  - action: action_delete_order
-- story: preferences ingredients story 2 (./tests/test_stories.yml)
-  steps:
-  - intent: preference_ingredients  # predicted: preference_ingredients: I'd like eat something with tomato
-    entities: []
-  - slot_was_set:
-    - ingredients: tomato
-  - action: action_preference_ingredients
+    - time: 22:00
+  - action: action_edit_order  # predicted: utter_drink after action_unlikely_intent

@@ -2,100 +2,26 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: happy path 1
+
+#WELCOME
+# ***********************************************
+- story: welcome path
   steps:
   - user: |
-      hello there!
+      hy
     intent: greet
   - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
 
-- story: happy path 2
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
-
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
-
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
-
-- story: say goodbye
+- story: goodbye path
   steps:
   - user: |
       bye-bye!
     intent: goodbye
   - action: utter_goodbye
 
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
 
-- story: new order 1
+- story: order path
   steps:
-  - user: |
-      Can I order something?
-    intent: order_something_generic
-  - action: utter_order_info
   - user: |
       Can I order a [pizza]{"entity": "food"}?
     intent: order_something
@@ -104,24 +30,17 @@ stories:
   - user: |
       [11:00PM]{"entity": "time"}
     intent: choose_time
+  - action: utter_drink
+  - user: |
+      add to my order cola
+    intent: add_drink_to_order
   - action: action_save_order
 
-- story: new order 2
-  steps:
-  - user: |
-      Can I order a [pizza]{"entity": "food"}?
-    intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - user: |
-      [10:00 PM]{"entity": "time"}
-    intent: choose_time
-  - action: action_save_order
 
-- story: edit 1
+- story: edit order path
   steps:
   - user: |
-      Can I edit my order [AA92660]{"entity": "order_id"}?
+      Edit Order with ID [AA92660]{"entity": "order_id"}?
     intent: edit_order_with_id
   - action: utter_new_time
   - user: |
@@ -129,131 +48,68 @@ stories:
     intent: choose_time
   - action: action_edit_order
 
-- story: edit 2
-  steps:
-  - user: |
-      Can I edit my order?
-    intent: edit_order
-  - action: utter_order_id
-  - user: |
-      [AA92660]{"entity": "order_id"}
-    intent: order_id
-  - action: utter_new_time
-  - user: |
-      [23:00]{"entity": "time"}
-    intent: choose_time
-  - action: action_edit_order
 
-- story: delete 1
+- story: delete order path
   steps:
   - user: |
-      Can I delete my order [AA92661]{"entity": "order_id"}?
+      Delete Order with ID [AA92661]{"entity": "order_id"}?
     intent: delete_order_with_id
   - action: action_delete_order
 
-- story: delete 2
-  steps:
-  - user: |
-      Can I delete my order?
-    intent: delete_order
-  - action: utter_order_id
-  - user: |
-      [AA92662]{"entity": "order_id"}
-    intent: order_id
-  - action: action_delete_order
-
-
-
-- story: intolerant path
-  steps: 
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      I'm intolerant [gluten]{"entity":"intolerance"}
-    intent: intolerant
-  - action: action_intolerant
-  - user: |
-      Can I order a [pizza]{"entity": "food"}?
-    intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - user: |
-      [10:00 PM]{"entity": "time"}
-    intent: choose_time
-  - action: action_save_order
-
-
-- story: intolerant path 2
+- story: intolerant path 
   steps: 
   - user: |
       I'm intolerant [gluten]{"entity":"intolerance"}
     intent: intolerant
   - action: action_intolerant
-
 
 - story: type diet path
   steps: 
   - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      I'm [vegan]{"entity":"diets"}
-    intent: type_diet
-  - action: utter_type_diet
-  - action: action_type_diet
-  - user: |
-      Can I order a [pizza]{"entity": "food"}?
-    intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - user: |
-      [10:00 PM]{"entity": "time"}
-    intent: choose_time
-  - action: action_save_order
-
-
-- story: type diet path 2
-  steps: 
-  - user: |
       I'm [vegan]{"entity":"diets"}
     intent: type_diet
   - action: utter_type_diet
   - action: action_type_diet
 
+# - story: preferences story path #da rivedere
+#   steps: 
+#   - user: |
+#       I'd like eat [pasta]{"entity":"food"}
+#     intent: preferences
+#   - action: utter_suggest
 
-
-- story: preferences story 2
-  steps: 
-  - user: |
-      I'd like eat [pasta]{"entity":"food"}
-    intent: preferences
-  - action: utter_suggest
-
-
-
-- story: preferences ingredients story 2
+- story: preferences ingredients path
   steps: 
   - user: |
       I'd like eat something with [tomato]{"entity":"ingredients"}
     intent: preference_ingredients
   - action: action_preference_ingredients
 
-
-
-- story: preferences region story 2
+- story: preferences region path 
   steps: 
   - user: |
       I want to eat some tipical food from [lombardia]{"entity":"regions"}
     intent: region_food
   - action: action_region_food
 
-
-- story: preferences type plate  story 2
+- story: preferences type plate path
   steps: 
   - user: |
       I want a [second dish]{"entity":"plates"}
     intent: type_plate
   - action: action_type_plate_food
+
+- story: suggest plate path 
+  steps:
+  - user: |
+      propose new plate
+    intent: suggest_new_plate
+  - action: utter_new_plate
+  - user: |
+      title plate suggesting pasta al pesto
+    intent: title_receipt
+  - action: utter_new_type_plate
+  - user: |
+      type plate suggesting main dish
+    intent: type_plate_receipt
+  - action: action_suggest_new_receipt

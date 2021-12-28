@@ -1,41 +1,43 @@
-parozzo; [eggs - sugar - semolino - mandorle - liquor];dessert; abruzzo ;not intolerant
-arrosticini; [carne di sheep - salt - peper - aceto balsamico];second dish; abruzzo;not intolerant
-Cacciote cacio e ova; [bread raffermo - cheese - eggs - parsley - peper & salt - oil di semi di girasole - tomato - garlic - basilico];main dish; abruzzo;not intolerant
-Fusilli con la mollica; [pasta - mollica di bread - acciughe - cheese - parsley - chili pepper - oil oliva - salt];main dish; basilicata ;not intolerant
-lamb not intolleranta lucana; [lamb - potatoes - tomato - onion - mollica di bread - cheese - garlic - parsley - oil - salt - peper];second dish; basilicata;not intolerant
-Chinulidd; [flour - eggs - sugar - wine - strutto - castagne - pere - cacao - cioccolato - miele - liquor];dessert; basilicata ;not intolerant
-polpette di melanzane; [melanzane - eggs - bread  - salt - peper - parmigiano - spezie - pangrattato - oil di semi di arachide];side dish; calabria ;not intolerant
-penne not intolleranta provola; [penne -  tomato - onion - provola silana - wine - chili pepper - parsley - oil di oliva - salt ];main dish; calabria;not intolerant
-lamb del pastore; [lamb -  cheese - onion - garlic - olive - oil - salt - peper];second dish; calabria ;not intolerant
-pitta mpigliata o nchiusa; [flour - eggs - oil di oliva - wine - yeast - salt - noci - mandorle - pinoli - miele - fichi secchi - raisins - sugar - cannella - arancia - anice];dessert; calabria;not intolerant
-pasta not intolleranta sorentina; [pasta - tomato - mozzarella - basilico - olivio di oliva - grana padano - garlic - salt];main dish; campania;not intolerant
-baba al rum; [flour - butter - eggs -  latte - sugar - yeast - salt - acqua - sugar - rum - limon- marmellata];dessert; campania;not intolerant
-Baccala not intolleranta perpicaregna; [baccala mussillo - oil - peperroni cruschi - garlic - salt - salt];second dish; campania;not intolerant
-Cannelloni di carne; [pasta- macinato - celery- carrots- onion- wine- latte- tomato- besciamella- parmigiano- oil di oliva- butter- salt- peper];main dish; emilia romagna ;not intolerant
-Rosa di parma; [filetto di manzo - prosciutto - parmigiano - rosemary - oil - butter - wine - Marsala - garlic - panna - salt - peper];second dish; emilia romagna ;not intolerant
-tagliattele fritte; [flour - eggs - rum - limon - sugar - oil di arachide - sugar a velo];dessert; emilia romagna ;not intolerant
-frico; [cheese - montasio - potatoes - oil - salt - peper];main dish; friuli venezia giuglia ;not intolerant
-costine cotte nel brodo; [carne di maiale - butter - flour - acqua - wine - garlic  - salvia - oil - rosemary - not intollerantoro - salt - peper];second dish; friuli venezia giuglia ;not intolerant
-Schiacciata con uva fragola; [flour - acqua - sugar - oil - yeast - salt - uva fragola];dessert; friuli venezia giuglia ;not intolerant
-tiramisu; [eggs -  mascarpone - coffee - cacao - savoiardi - sugar ];dessert; friuli venezia giuglia;not intolerant
-spaghetti not intolleranta carbonara; [guanciale - cheese - pasta - eggs];main dish; lazio;not intolerant
-crosta di cheese romana; [flour - butter - sugar - eggs - salt - cheese - limon - amido di mais - pinoli - raisins - rum - cannella];dessert; lazio;not intolerant
-Salsicce e pan’unto; [sausage - bread - salvia - bacon];second dish; lazio ;not intolerant
-pasta al pesto; [basilico - pinoli - parmigiano - oil - garlic];main dish; liguria ;not intolerant
-stecchi not intolleranta genovese; [veal - manzo - chicken - sausage - butter - eggs - pangrattato - oil - salt - besciamella - prosciutto cotto - grana padano - parsley];second dish; liguria ;not intolerant
-pandolce genovese; [eggs - raisins - flour - ...];dessert; liguria;not intolerant
-risotto not intolleranta milanese; [riso - ];main dish; lombardia ;not intolerant
-cottoletta milanese; [manzo - carrots - celery - salt - onion];second dish; lombardia;not intolerant
-amor polenta; [butter - sugar - eggs - flour - maizena - yeast - vaniglia - liquor - salt];dessert; lombardia ;not intolerant
-pasta con il ciasculo; [pasta - ciasculo - tomato - peper - basilico - cheese - chili pepper ];main dish; marche ;not intolerant
-brodetto not intolleranta fanese; [fish - ricetta segreta];main dish; marche ;not intolerant
-brasato not intolleranta marchigiana; [...];second dish; marche ;not intolerant
-castagnole not intolleranta crema; [... crema - eggs - sugar - liquor];dessert; marche;not intolerant
-fusilli not intolleranta molisana; [pasta - lamb - veal - sausage - tomato - wine - onion - carrots - celery - cheese - parsley - chili pepper - oil - salt];main dish; molise ;not intolerant
-spezzatino di sheep; [sheep - tomato - onion - chili pepper - parsley - rosemary - oil - salt - bread];second dish; molise ;not intolerant
-chicken not intolleranta cacciatora;[chicken - cipolle - celery - rosemary - wine - salt - carrots - garlic - oil - peper];second dish;international;gluten
-insalata di octopus;[octopus - potatoes - parsley - salt - peper];second dish;international;gluten
-gnocchi speck e crema potatoes;[speck - potatoes - parsley - salt - gnocchi - peper];main dish;international;lactoise 
-cestini di brise con salmon e avocado ;[salmon - brise - avocado];side dish;international;lactoise 
-spedini di chicken ;[chicken - rosemary ...];second dish;international;lactoise 
-pizza diavola[tomato - mozzarella - sa;spicy salami - mozzarella - tomato];pizza;international;not intolerant
+parozzo; [eggs - sugar - semolino - mandorle - liquor];dessert; abruzzo ;not intolerant; [wine - water - vodka]; 330Kcal
+arrosticini; [carne di sheep - salt - peper - aceto balsamico];second dish; abruzzo;not intolerant; [wine - water - beer]; 400Kcal
+Pallotte cacio e ova; [bread raffermo - cheese - eggs - parsley - peper & salt - oil di semi di girasole - tomato - garlic - basilico];main dish; abruzzo;not intolerant; [wine - water]; 450Kcal
+Fusilli con la mollica; [pasta - mollica di bread - acciughe - cheese - parsley - chili pepper - oil oliva - salt];main dish; basilicata ;not intolerant; [wine - water]; 300Kcal
+lamb lucana; [lamb - potatoes - tomato - onion - mollica di bread - cheese - garlic - parsley - oil - salt - peper];second dish; basilicata;not intolerant; [wine - water - beer]; 380Kcal
+Chinulidd; [flour - eggs - sugar - wine - strutto - castagne - pere - cacao - cioccolato - miele - liquor];dessert; basilicata ;not intolerant; [wine - water - vodka]; 350Kcal
+polpette di melanzane; [melanzane - eggs - bread  - salt - peper - parmigiano - spezie - pangrattato - oil di semi di arachide];side dish; calabria ;not intolerant; [wine - water]; 210Kcal
+penne provola; [penne -  tomato - onion - provola silana - wine - chili pepper - parsley - oil di oliva - salt ];main dish; calabria;not intolerant; [wine - water]; 290Kcal
+lamb del pastore; [lamb -  cheese - onion - garlic - olive - oil - salt - peper];second dish; calabria ;not intolerant; [wine - water - beer]; 320Kcal
+pitta mpigliata o nchiusa; [flour - eggs - oil di oliva - wine - yeast - salt - noci - mandorle - pinoli - miele - fichi secchi - raisins - sugar - cannella - arancia - anice];dessert; calabria;not intolerant; [wine - water - vodka]; 240Kcal
+pasta sorentina; [pasta - tomato - mozzarella - basilico - olivio di oliva - grana padano - garlic - salt];main dish; campania;not intolerant; [wine - water]; 190Kcal
+pasta; [pasta - tomato - mozzarella - basilico - olivio di oliva - grana padano - garlic - salt];main dish; campania;not intolerant; [wine - water]; 190Kcal
+baba al rum; [flour - butter - eggs -  latte - sugar - yeast - salt - acqua - sugar - rum - limon- marmellata];dessert; campania;not intolerant; [wine - water - vodka]; 300Kcal
+Baccala perpicaregna; [baccala mussillo - oil - peperroni cruschi - garlic - salt - salt];second dish; campania;not intolerant; [wine - water - beer]; 220Kcal
+Cannelloni di carne; [pasta- macinato - celery- carrots- onion- wine- latte- tomato- besciamella- parmigiano- oil di oliva- butter- salt- peper];main dish; emilia romagna ;not intolerant; [wine - water]; 420Kcal
+Rosa di parma; [filetto di manzo - prosciutto - parmigiano - rosemary - oil - butter - wine - Marsala - garlic - panna - salt - peper];second dish; emilia romagna ;not intolerant; [wine - water - beer]; 200Kcal
+tagliattele fritte; [flour - eggs - rum - limon - sugar - oil di arachide - sugar a velo];dessert; emilia romagna ;not intolerant; [wine - water, vodka]; 500Kcal
+frico; [cheese - montasio - potatoes - oil - salt - peper];main dish; friuli venezia giuglia ;not intolerant; [wine - water]; 480Kcal
+costine cotte nel brodo; [carne di maiale - butter - flour - acqua - wine - garlic  - salvia - oil - rosemary  - salt - peper];second dish; friuli venezia giuglia ;not intolerant; [wine - water - beer]; 390Kcal
+Schiacciata con uva fragola; [flour - acqua - sugar - oil - yeast - salt - uva fragola];dessert; friuli venezia giuglia ;not intolerant; [wine - water - vodka]; 270Kcal
+tiramisu; [eggs -  mascarpone - coffee - cacao - savoiardi - sugar ];dessert; friuli venezia giuglia;not intolerant; [wine - water - vodka]; 410Kcal
+carbonara; [guanciale - cheese - pasta - eggs];main dish; lazio;not intolerant; [wine - water]; 450Kcal
+crosta di cheese romana; [flour - butter - sugar - eggs - salt - cheese - limon - amido di mais - pinoli - raisins - rum - cannella];dessert; lazio;not intolerant; [wine - water - vodka]; 320Kcal
+Salsicce e pan’unto; [sausage - bread - salvia - bacon];second dish; lazio ;not intolerant; [wine - water - beer]; 550Kcal
+pasta al pesto; [basilico - pinoli - parmigiano - oil - garlic];main dish; liguria ;not intolerant; [wine - water]; 320Kcal
+stecchi genovese; [veal - manzo - chicken - sausage - butter - eggs - pangrattato - oil - salt - besciamella - prosciutto cotto - grana padano - parsley];second dish; liguria ;not intolerant; [wine - water - beer]; 345Kcal
+pandolce genovese; [eggs - raisins - flour - ...];dessert; liguria;not intolerant; [wine - water - vodka]; 190Kcal
+risotto milanese; [riso - ];main dish; lombardia ;not intolerant; [wine - water]; 210Kcal
+cottoletta milanese; [manzo - carrots - celery - salt - onion];second dish; lombardia;not intolerant; [wine - water - beer]; 260Kcal
+amor polenta; [butter - sugar - eggs - flour - maizena - yeast - vaniglia - liquor - salt];dessert; lombardia ;not intolerant; [wine - water - vodka]; 240Kcal
+pasta con il ciasculo; [pasta - ciasculo - tomato - peper - basilico - cheese - chili pepper ];main dish; marche ;not intolerant; [wine - water]; 210Kcal
+brodetto fanese; [fish - ricetta segreta];main dish; marche ;not intolerant; [wine - water]; 170Kcal
+brasato marchigiana; [...];second dish; marche ;not intolerant; [wine - water - beer]; 240Kcal
+pizza;[mozzarella - tomato];pizza;international;not intolerant; [beer - water]; 210Kcal
+castagnole crema; [... crema - eggs - sugar - liquor];dessert; marche;not intolerant; [wine - water - vodka]; 280Kcal
+fusilli molisana; [pasta - lamb - veal - sausage - tomato - wine - onion - carrots - celery - cheese - parsley - chili pepper - oil - salt];main dish; molise ;not intolerant; [wine - water]; 200Kcal
+spezzatino di sheep; [sheep - tomato - onion - chili pepper - parsley - rosemary - oil - salt - bread];second dish; molise ;not intolerant; [wine - water - beer]; 180Kcal
+chicken a cacciatora;[chicken - cipolle - celery - rosemary - wine - salt - carrots - garlic - oil - peper];second dish;international;gluten; [wine - water - beer]; 180Kcal
+insalata di octopus;[octopus - potatoes - parsley - salt - peper];second dish;international;gluten; [wine - water - beer]; 160Kcal
+gnocchi speck e crema potatoes;[speck - potatoes - parsley - salt - gnocchi - peper];main dish;international;lactoise; [wine - water]; 350Kcal
+cestini di brise con salmon e avocado ;[salmon - brise - avocado];side dish;international;lactoise; [wine - water]; 290Kcal 
+spedini di chicken ;[chicken - rosemary ...];second dish;international;lactoise; [wine - water - beer]; 160Kcal 
+pizza diavola;[spicy salami - mozzarella - tomato];pizza;international;not intolerant; [beer - water]; 210Kcal

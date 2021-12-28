@@ -2,247 +2,153 @@ version: "3.0"
 
 stories:
 
-- story: happy path
+#WELCOME
+# ***********************************************
+- story: welcome path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+- story: goodbye path
+  steps: 
+  - intent: goodbye
   - action: utter_goodbye
 
+# ORDER
 # ***********************************************
-# ***********************************************
-# ***********************************************
-
-- story: order path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: order_something_generic
-  - action: utter_order_info
-  - intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - intent: choose_time
-  - action: action_save_order
-
-- story: order path 2
+- story: order path
   steps:
   - intent: order_something
   - action: utter_order
   - action: utter_time
   - intent: choose_time
+  - action: utter_drink
+  - intent: add_drink_to_order
+#  - action: utter_suggest_drink #da rivedere
+#  - action: action_suggest_drink #da rivedere
   - action: action_save_order
 
-- story: edit path 1
+#SHOW ORDER
+# ***********************************************
+- story: show order path
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: order_something_generic
-  - action: utter_order_info
-  - intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - intent: choose_time
-  - action: action_save_order
-  - intent: edit_order
-  - action: utter_order_id
-  - intent: order_id
-  - action: utter_new_time
-  - intent: choose_time
-  - action: action_edit_order
+  - intent: show_order_id
+  - action: action_show_order_id
 
-- story: edit path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: edit_order
-  - action: utter_order_id
-  - intent: order_id
-  - action: utter_new_time
-  - intent: choose_time
-  - action: action_edit_order
-
-- story: edit path 3
-  steps:
-  - intent: edit_order
-  - action: utter_order_id
-  - intent: order_id
-  - action: utter_new_time
-  - intent: choose_time
-  - action: action_edit_order
-
-- story: edit path 4
-  steps:
-  - intent: edit_order_with_id
-  - action: utter_new_time
-  - intent: choose_time
-  - action: action_edit_order
-
-- story: delete path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: delete_order
-  - action: utter_order_id
-  - intent: order_id
-  - action: action_delete_order
-
-- story: delete path 2
-  steps:
-  - intent: delete_order
-  - action: utter_order_id
-  - intent: order_id
-  - action: action_delete_order
-
-- story: delete path 3
+#DELETE ORDER
+# ***********************************************
+- story: delete order path 
   steps:
   - intent: delete_order_with_id
   - action: action_delete_order
 
+#EDIT ORDER
+# ***********************************************
+- story: edit order path 
+  steps:
+  - intent: edit_order_with_id
+  - action: utter_new_order
+  - intent: edit_order_time
+  - action: action_edit_order_time
+
+
+- story: edit order path 2
+  steps:
+  - intent: edit_order_with_id
+  - action: utter_new_order
+  - intent: edit_order_recipe
+  - action: action_edit_order_recipe
+
+
+- story: edit order path 3
+  steps:
+  - intent: edit_order_with_id
+  - action: utter_new_order
+  - intent: edit_order_drink
+  - action: action_edit_order_drink
+  
+
+#INTOLERANT
+# ***********************************************
 - story: intolerant path
   steps: 
-  - intent: greet
-  - action: utter_greet
-  - intent: intolerant
-  - action: action_intolerant
-  - intent: order_something_generic
-  - action: utter_order_info
-  - intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - intent: choose_time
-  - action: action_save_order
-
-
-- story: intolerant path 2 
-  steps: 
   - intent: intolerant
   - action: action_intolerant
 
-- story: type diet path
-  steps: 
-  - intent: greet
-  - action: utter_greet
-  - intent: type_diet
-  - action: utter_type_diet
-  - action: action_type_diet
-  - intent: order_something_generic
-  - action: utter_order_info
-  - intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - intent: choose_time
-  - action: action_save_order
-
-
-- story: type diet path 2
+#TYPE DIET
+# ***********************************************
+- story: type_diet path
   steps: 
   - intent: type_diet
   - action: utter_type_diet
   - action: action_type_diet
 
-
-- story: preferences story 
-  steps: 
-  - intent: greet
-  - action: utter_greet
-  - intent: preferences
-  - action: utter_suggest
-  - intent: order_something_generic
-  - action: utter_order_info
-  - intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - intent: choose_time
-  - action: action_save_order
+#PREFERENCES (DA RIVEDERE)
+# ***********************************************
+# - story: preferences path
+#   steps: 
+#   - intent: preferences
+#   - action: action_preferences_path
 
 
-- story: preferences story 2
-  steps: 
-  - intent: preferences
-  - action: utter_suggest
-
-
-- story: preferences ingredients story 
-  steps: 
-  - intent: greet
-  - action: utter_greet
-  - intent: preference_ingredients
-  - action: action_preference_ingredients
-  - intent: order_something_generic
-  - action: utter_order_info
-  - intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - intent: choose_time
-  - action: action_save_order
-
-
-- story: preferences ingredients story 2
+#PREFERENCES_INGREDIENTS
+# ***********************************************
+- story: preferences_ingredients path
   steps: 
   - intent: preference_ingredients
   - action: action_preference_ingredients
 
-
-
-
-- story: preferences region story 
-  steps: 
-  - intent: greet
-  - action: utter_greet
-  - intent: region_food
-  - action: action_region_food
-  - intent: order_something_generic
-  - action: utter_order_info
-  - intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - intent: choose_time
-  - action: action_save_order
-
-
-- story: preferences region story 2
+#STORY
+# ***********************************************
+- story: preferences_region path
   steps: 
   - intent: region_food
   - action: action_region_food
 
 
-- story: preferences type plate story 
-  steps: 
-  - intent: greet
-  - action: utter_greet
-  - intent: type_plate
-  - action: action_type_plate_food
-  - intent: order_something_generic
-  - action: utter_order_info
-  - intent: order_something
-  - action: utter_order
-  - action: utter_time
-  - intent: choose_time
-  - action: action_save_order
-
-
-- story: preferences type plate  story 2
+#PREFERENCES_TYPE_PLATE
+# ***********************************************
+- story: preferences type_plate path 
   steps: 
   - intent: type_plate
   - action: action_type_plate_food
+
+#HELP
+# ***********************************************
+- story: help path 
+  steps: 
+  - intent: alternatives_of_interactions
+  - action: utter_alternatives_of_interactions 
+
+#CALORIC INTAKE
+# ***********************************************
+- story: caloric intake path
+  steps: 
+  - intent: caloric_intake
+  - action: action_caloric_intake
+
+#SUGGESTION DRINK
+# ***********************************************
+- story: suggest drink path
+  steps: 
+  - intent: suggest_drink
+  - action: action_suggest_drink
+
+
+#SUGGESTION NEW PLATE
+# ***********************************************
+- story: suggest new_plate path
+  steps:
+  - intent: suggest_new_plate
+  - action: utter_new_plate
+  - intent: title_receipt
+  - action: utter_new_type_plate
+  - intent: type_plate_receipt
+  - action: action_suggest_new_receipt
+
+#SHOW MENU
+# ***********************************************
+- story: show the menu
+  steps:
+  - intent: show_menu
+  - action: action_show_menu
