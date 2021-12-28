@@ -246,7 +246,15 @@ responses:
   utter_drink:
   - text: let me know what do you want to drink (formula - add to my order <<water>>)
   utter_new_plate: 
-  - text: let me know what do you want suggest, Insert title of receipt 
+  - text: |
+      let me know what do you want suggest, from this list of elements:
+
+        - pasta ai fichi
+        - pizza ananas
+        - strudel
+        - gnocchetti al ragù cinghiale
+        - gelato al cioccolato salato flitto
+        - anatra arrosto 
   utter_new_type_plate: 
   - text: Let me know what kind of plates is "Main Dish, Dessert, Second Dish, Side Dish"
   utter_out_of_scope:

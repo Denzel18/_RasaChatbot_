@@ -254,17 +254,9 @@ nlu:
 
 - lookup: receipt
   examples: |
-    - pasta e fichi  
-    - spaghetti carbonara 
-    - pasta al pesto 
-    - pizza margherita 
-    - Vegetarian Burrito Bowl with Avocado Crema
-    - Pumpkin Curry Soup
-    - Falafel burgers
-    - pizza margherita
-    - vegan crostino
-    - vegan lasagna
-    - seitan burger
-    - spaghetti with avocado
-    - patate al forno
-    - insalata finocchi e arance
+    - pasta e fichi   
+    - pizza ananas
+    - strudel
+    - gnocchetti al ragù cinghiale
+    - gelato al cioccolato salato flitto
+    - anatra arrosto 
