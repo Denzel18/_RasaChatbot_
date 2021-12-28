@@ -113,13 +113,6 @@ stories:
   - intent: type_plate
   - action: action_type_plate_food
 
-#HELP
-# ***********************************************
-- story: help path 
-  steps: 
-  - intent: alternatives_of_interactions
-  - action: utter_alternatives_of_interactions 
-
 #CALORIC INTAKE
 # ***********************************************
 - story: caloric intake path

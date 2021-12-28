@@ -1,0 +1,343 @@
+[
+  {
+    "text": "For the 14:00",
+    "entities": [
+      {
+        "start": 8,
+        "end": 13,
+        "value": "14:00",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 8,
+        "end": 13,
+        "confidence_entity": 0.8602972626686096,
+        "value": "14:00",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "2:00 PM",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "2:00 PM",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.636446475982666,
+        "value": "2:00 PM",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "12:00 AM",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "12:00 AM",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.6360549330711365,
+        "value": "12:00 AM",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "23",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "23",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.970167875289917,
+        "value": "23",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "edit order time 09:00",
+    "entities": [
+      {
+        "start": 16,
+        "end": 21,
+        "value": "09:00",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 16,
+        "end": 21,
+        "confidence_entity": 0.8699321746826172,
+        "value": "09:00",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "edit order time 19:00",
+    "entities": [
+      {
+        "start": 16,
+        "end": 21,
+        "value": "19:00",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 16,
+        "end": 21,
+        "confidence_entity": 0.8699321746826172,
+        "value": "19:00",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I'm intolerant to gluten",
+    "entities": [
+      {
+        "start": 18,
+        "end": 24,
+        "value": "gluten",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 18,
+        "end": 24,
+        "confidence_entity": 0.9947769641876221,
+        "value": "gluten",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I have an intolerance for lactoise",
+    "entities": [
+      {
+        "start": 26,
+        "end": 34,
+        "value": "lactoise",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 26,
+        "end": 34,
+        "confidence_entity": 0.9959508180618286,
+        "value": "lactoise",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I can't eat nuts",
+    "entities": [
+      {
+        "start": 12,
+        "end": 16,
+        "value": "nuts",
+        "entity": "intolerance"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "intolerance",
+        "start": 12,
+        "end": 16,
+        "confidence_entity": 0.9950900077819824,
+        "value": "nuts",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I would like to know the caloric intake for pasta al pesto",
+    "entities": [
+      {
+        "start": 44,
+        "end": 58,
+        "value": "pasta al pesto",
+        "entity": "food"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "food",
+        "start": 44,
+        "end": 58,
+        "confidence_entity": 0.8377752900123596,
+        "value": "pasta al pesto",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "food",
+        "start": 44,
+        "end": 49,
+        "value": "pasta",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "I would like to know the caloric intake for pasta e fichi",
+    "entities": [
+      {
+        "start": 44,
+        "end": 57,
+        "value": "pasta e fichi",
+        "entity": "food"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "food",
+        "start": 44,
+        "end": 57,
+        "confidence_entity": 0.8281601667404175,
+        "value": "pasta e fichi",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "food",
+        "start": 44,
+        "end": 49,
+        "value": "pasta",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Suggest me a drink for [Salmon] (food)",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "food",
+        "start": 24,
+        "end": 30,
+        "value": "Salmon",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Can you suggest me a drink for [Pizza] (food)?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "food",
+        "start": 32,
+        "end": 37,
+        "value": "Pizza",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "title plate suggesting pasta ai fichi",
+    "entities": [
+      {
+        "start": 23,
+        "end": 37,
+        "value": "pasta ai fichi",
+        "entity": "receipt"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "receipt",
+        "start": 23,
+        "end": 37,
+        "confidence_entity": 0.787744402885437,
+        "value": "pasta ai fichi",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "food",
+        "start": 23,
+        "end": 28,
+        "value": "pasta",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "receipt",
+        "start": 23,
+        "end": 37,
+        "value": "pasta ai fichi",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "title plate suggesting pizza ananas",
+    "entities": [
+      {
+        "start": 23,
+        "end": 35,
+        "value": "pizza ananas",
+        "entity": "receipt"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "receipt",
+        "start": 23,
+        "end": 35,
+        "confidence_entity": 0.9427626729011536,
+        "value": "pizza ananas",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "food",
+        "start": 23,
+        "end": 28,
+        "value": "pizza",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "receipt",
+        "start": 23,
+        "end": 35,
+        "value": "pizza ananas",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  }
+]

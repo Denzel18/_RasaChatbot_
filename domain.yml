@@ -1,7 +1,7 @@
 version: '3.0'
 
 config:
-  store_entities_as_slots: true 
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -10,7 +10,7 @@ intents:
   - greet:
       use_entities: []
   - goodbye:
-      use_entities: [] 
+      use_entities: []
   - order_something:
       use entities:
         - food
@@ -50,7 +50,7 @@ intents:
   - preference_ingredients:
       use entities:
         - ingredients
-  - alternatives_of_interactions:
+  - help:
       use_entities: []
   - caloric_intake:
       use entities:
@@ -62,20 +62,24 @@ intents:
       use entities:
         - drink
   # suggerimento nuovo piatto
-  - suggest_new_plate: 
+  - suggest_new_plate:
       use_entities: []
   - title_receipt:
       use entities:
         - receipt
-  - type_plate_receipt: 
+  - type_plate_receipt:
       use entities:
-        - plates_suggest
+        - plates
   - show_menu:
       use_entities: []
+  - start:
+      use_entities: []
+  - stop:
+      use_entities: []
+
 
 actions:
 - action_save_order
-- action_show_order
 - action_edit_order_time
 - action_edit_order_recipe
 - action_edit_order_drink
@@ -85,11 +89,9 @@ actions:
 - action_region_food
 - action_intolerant
 - action_preference_ingredients
-- action_alternatives_of_interactions
 - action_show_order_id
-- action_caloric_intake 
+- action_caloric_intake
 - action_suggest_drink
-- action_suggest_new_plate
 - action_show_menu
 - action_suggest_new_receipt
 - utter_greet
@@ -102,7 +104,7 @@ actions:
 - utter_type_diet
 - utter_new_order
 - utter_show_order
-- utter_alternatives_of_interactions
+- utter_help
 # drink
 - utter_drink
 # suggerimento nuovo piatto
@@ -110,6 +112,8 @@ actions:
 - utter_new_type_plate
 # fallback
 - nlu_fallback
+- utter_start
+- utter_stop
 
 
 
@@ -119,14 +123,12 @@ entities:
 - plates
 - regions
 - ingredients
-- time 
-- order_id 
-- number 
+- time
+- order_id
+- number
 - intolerance
-- drink 
+- drink
 - receipt
-- plates_suggest
-
 
 
 slots:
@@ -184,28 +186,28 @@ slots:
     mappings:
     - type: from_entity
       entity: ingredients
-  drink: 
-    type: text
-    influence_conversation: true 
-    mappings: 
-    - type: from_entity
-      entity: drink
-  receipt: 
-    type: text 
-    influence_conversation: true
-    mappings: 
-    - type: from_entity
-      entity: receipt
-  plates_suggest:
+  drink:
     type: text
     influence_conversation: true
     mappings:
     - type: from_entity
-      entity: plates_suggest
-      
+      entity: drink
+  receipt:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: receipt
 
 
 responses:
+  utter_start:
+    - text: Welcome visitor, I am FoodOrderingBot, I can help you create and manage food orders.
+        For more help you can type "/help".
+    - text: Yo man, I am FoodOrderingBot, I can help you create and manage food orders.
+        For more help you can type "/help".
+  utter_stop:
+    - text: Goodbye, friend!
   utter_greet:
   - text: Hey! Welcome to the B.I.G. Pizza & Restaurant!
   utter_goodbye:
@@ -224,39 +226,55 @@ responses:
   - text: I will select a plate adapt for you
   utter_show_order:
   - text: Taking care of your request. Here is what you booked
-  utter_alternatives_of_interactions:
+  utter_help:
   - text: |
       You're welcome. Here is the list of things you can do by us:
 
-       - Visualize the Menu (FORM : Show me the entire menu)
-       - Order a dish (pasta, pizza, second meal, side dish, dessert), (FORM : I would like to order <<dish name>>)
-       - Show order <<ID>> (FORM : show order with ID <<AA....>>)
-       - Edit an Order (FORM : edit order with ID <<AA....>>)
-       - Delete an Order (FORM : delete order with ID <<AA....>>)
-       - Visualize dishes for a category (vegetarian, vegan, omnivorous), (FORM : i'm <<vegan>>)
-       - Visualize dishes acceptable from intolerance (gluten, lactoise, nuts), (FORM : i'm intolerant to <<lactoise>>)
-       - Visualize dishes from specific Region (emilia romagna, toscana, marche, ...), (FORM : I want to try something from <<emilia romagna>>)
-       - Asking a suggestion to you for a plate with choosen ingredient, (FORM : I'd like to eat something with << Specific Ingredient>>)
-       - Ask a suggestion of a drink for the dish you would like to take (BEFORE ORDERING A DISH !), (FORM : Suggest me a drink for <<dish name>>)
-       - Knowing the Caloric Intake of a SPECIFIED dish (BEFORE ORDERING A DISH !), (FORM : I would like to know the caloric intake for <<dish name>>)
-       - Suggest a new dish for the menu (to insert in the future by the owners)
-       - Quit the application using command <</stop>>
-  utter_new_order: 
+      #####
+      - Visualize the Menu -> (e.g.: Show me the entire menu)
+      #####
+      - Order a dish -> (e.g.: I would like to order a <<pizza>>)
+      #####
+      - Show a specified order -> (e.g.: Show order with ID <<AA12457>>)
+      #####
+      - Edit a specified order -> (e.g.: Edit order with ID <<AA36985>>)
+      #####
+      - Delete a specified order -> (e.g.: Delete order with ID <<AA25479>>)
+      #####
+      - Visualize dishes for a specified category (i.e.: vegetarian, vegan, omnivorous) -> (FORM: I'm <<vegan>>)
+      #####
+      - Visualize dishes of a specified type (i.e.: main dish, second dish, dessert, side dish) -> (FORM: I want a <<main dish>>)
+      #####
+      - Visualize acceptable dishes from intolerance (i.e.: gluten, lactoise, nuts) -> (e.g.: I'm intolerant to <<lactoise>>)
+      #####
+      - Visualize typical dishes from a specified Region (i.e.: emilia romagna, toscana, marche, ...) -> (e.g.: I want to try something from <<emilia romagna>>)
+      #####
+      - Asking a suggestion to you for a plate with choosen ingredient -> (e.g.: I'd like to eat something with <<tomato>>)
+      #####
+      - Ask a suggestion of a drink for the dish you would like to take (BEFORE ORDERING A DISH!) -> (e.g.: Suggest me a drink for <<Pizza>>)
+      #####
+      - Knowing the Caloric Intake of a SPECIFIED dish (BEFORE ORDERING A DISH!) -> (e.g.: I would like to know the caloric intake for <<Pizza Diavola>>)
+      #####
+      - Suggest a new dish for the menu (to insert in the future by the owners) -> (e.g.: Can I propose a new dish?)
+      #####
+      - Quit the application using command <</stop>>
+      #####
+  utter_new_order:
   - text: choose and insert the new order FORM where (FORM = edit order time <<09:00>> , edit order recipe <<Tuna>> , edit order drink <<Cola>>)
   utter_drink:
   - text: let me know what do you want to drink (formula - add to my order <<water>>)
-  utter_new_plate: 
+  utter_new_plate:
   - text: |
-      let me know what do you want suggest, from this list of elements:
+      let me know what do you want suggest, from this list of elements (FORM: title plate suggesting <<pasta ai fichi>>):
 
-        - pasta ai fichi
-        - pizza ananas
-        - strudel
-        - gnocchetti al ragù cinghiale
-        - gelato al cioccolato salato flitto
-        - anatra arrosto 
-  utter_new_type_plate: 
-  - text: Let me know what kind of plates is "Main Dish, Dessert, Second Dish, Side Dish"
+      - pasta ai fichi
+      - pizza ananas
+      - strudel
+      - gnocchetti al cinghiale
+      - gelato fritto
+      - anatra arrosto
+  utter_new_type_plate:
+  - text: |
+      Let me know what kind of plates is "Main Dish, Dessert, Second Dish, Side Dish" (FORM: type plate suggesting <<Main Dish>>)
   utter_out_of_scope:
   - text: Sorry, I didn't get what you said. Please rephrase what you said.
-  

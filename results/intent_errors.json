@@ -3,16 +3,16 @@
     "text": "Quo vado ?",
     "intent": "nlu_fallback",
     "intent_prediction": {
-      "name": "type_plate_receipt",
-      "confidence": 0.002215872285887599
+      "name": "title_receipt",
+      "confidence": 0.008370939642190933
     }
   },
   {
     "text": "Bella Zio ...",
     "intent": "nlu_fallback",
     "intent_prediction": {
-      "name": "delete_order_with_id",
-      "confidence": 0.0027291204314678907
+      "name": "goodbye",
+      "confidence": 0.012312282808125019
     }
   }
 ]

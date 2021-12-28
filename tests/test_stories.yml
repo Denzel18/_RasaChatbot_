@@ -32,7 +32,7 @@ stories:
     intent: choose_time
   - action: utter_drink
   - user: |
-      add to my order cola
+      add to my order [cola]{"entity": "drink"}
     intent: add_drink_to_order
   - action: action_save_order
 
@@ -42,11 +42,11 @@ stories:
   - user: |
       Edit Order with ID [AA92660]{"entity": "order_id"}?
     intent: edit_order_with_id
-  - action: utter_new_time
+  - action: utter_new_order
   - user: |
-      [22:00]{"entity": "time"}
-    intent: choose_time
-  - action: action_edit_order
+      edit order time [22:00]{"entity": "time"}
+    intent: edit_order_time
+  - action: action_edit_order_time
 
 
 - story: delete order path
@@ -106,10 +106,10 @@ stories:
     intent: suggest_new_plate
   - action: utter_new_plate
   - user: |
-      title plate suggesting pasta al pesto
+      title plate suggesting [strudel]{"entity":"receipt"}
     intent: title_receipt
   - action: utter_new_type_plate
   - user: |
-      type plate suggesting main dish
+      type plate suggesting [dessert]{"entity":"plates"}
     intent: type_plate_receipt
   - action: action_suggest_new_receipt

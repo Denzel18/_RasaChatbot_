@@ -1,2 +1,2 @@
-models/20*
+models/*.tar.gz
 .rasa/cache/*

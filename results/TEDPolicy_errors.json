@@ -12,6 +12,30 @@
     "predicted_entities": []
   },
   {
+    "text": "title plate suggesting strudel",
+    "entities": [
+      {
+        "start": 23,
+        "end": 30,
+        "value": "strudel",
+        "entity": "receipt"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "type plate suggesting dessert",
+    "entities": [
+      {
+        "start": 22,
+        "end": 29,
+        "value": "dessert",
+        "entity": "plates"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
     "text": "Can I order a pizza?",
     "entities": [
       {
@@ -36,6 +60,18 @@
     "predicted_entities": []
   },
   {
+    "text": "add to my order cola",
+    "entities": [
+      {
+        "start": 16,
+        "end": 20,
+        "value": "cola",
+        "entity": "drink"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
     "text": "Edit Order with ID AA92660?",
     "entities": [
       {
@@ -43,6 +79,18 @@
         "end": 26,
         "value": "AA92660",
         "entity": "order_id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "edit order time 22:00",
+    "entities": [
+      {
+        "start": 16,
+        "end": 21,
+        "value": "22:00",
+        "entity": "time"
       }
     ],
     "predicted_entities": []

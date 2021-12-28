@@ -1,0 +1,16 @@
+[
+  {
+    "text": "Can I propose a new dish?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "plates",
+        "start": 20,
+        "end": 24,
+        "confidence_entity": 0.726779043674469,
+        "value": "dish",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

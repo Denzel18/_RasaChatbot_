@@ -6,7 +6,6 @@
 
 from typing import Any, Text, Dict, List
 
-from numpy import empty
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
@@ -27,10 +26,11 @@ def random_with_N_digits(n):
     range_end = (10 ** n) - 1
     return randint(range_start, range_end)
 
+
 class ActionSaveOrder(Action):
 
     def name(self) -> Text:
-        return 'action_save_order'  
+        return 'action_save_order'
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -38,7 +38,6 @@ class ActionSaveOrder(Action):
 
         # get slots values
         food = str(tracker.get_slot('food'))
-        #dispatcher.utter_message(text=f'Your order is safe and sound! The order ID is {food}.')
         time = str(tracker.get_slot('time'))
         drink = str(tracker.get_slot('drink'))
         # create a random order ID
@@ -58,12 +57,13 @@ class ActionSaveOrder(Action):
         writer.writerow([order_id, time, food, drink])
         file.close()
         dispatcher.utter_message(text=f'Your order is safe and sound! The order ID is {order_id}.')
+        # ripulire slot finita una storia
         SlotSet('drink', None)
-        return [SlotSet('food', None)]      #per ripulire lo slot finita una storia
-        #QUESTO ULTIMO PASSAGGIO E' IMPORTANTISSIMO, IN QUANTO SE NON FATTO E VIENE RIPETUTA LA STESSA OPERAZIONE NUOVAMENTE MANTEREBBE IN MEMORIA IL VECCHIO ID SE SI RICHIAMA METODO SENZA ALCUN ID (EX. delete (senza niente dopo))!
+        SlotSet('food', None)
         return []
 
-class ActionShowOrder(Action):      
+
+class ActionShowOrder(Action):
 
     def name(self) -> Text:
         return 'action_show_order_id'
@@ -73,31 +73,26 @@ class ActionShowOrder(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # get slots values
         order_id = str(tracker.get_slot('order_id'))
-       
         # read orders file
         df = pd.read_csv(orders_filename)
         # get index of the row with specified order ID
         index = df.index
-        #dispatcher.utter_message(text=f'{index}')
         condition = df['Order ID'] == order_id
-        #dispatcher.utter_message(text=f'{condition}')
         order_index = index[condition]
-        #dispatcher.utter_message(text=f'{order_index}')
         if len(order_index) == 0:
             # order not found
             # send message to the user
             dispatcher.utter_message(text=f'The order with the ID {order_id} has not been found.')
         else:
-            # edit row
+            # get details
             plate = df.loc[order_index[0], 'Plate']
             drink = df.loc[order_index[0], 'Drink']
             time = df.loc[order_index[0], 'Time']
-            dispatcher.utter_message(text=f"The order with the ID {order_id} booked for {time} o'clock contains :")
+            dispatcher.utter_message(text=f"The order with the ID {order_id} booked for {time} o'clock contains:")
             dispatcher.utter_message(text=f'{plate}')
             dispatcher.utter_message(text=f'{drink}')
-        return [SlotSet('order_id', None)]      #per ripulire lo slot finita una storia
-        #return []
-        
+        return [SlotSet('order_id', None)]  # per ripulire lo slot finita una storia
+
 
 class ActionEditOrderTime(Action):
 
@@ -117,22 +112,20 @@ class ActionEditOrderTime(Action):
         index = df.index
         condition = df['Order ID'] == order_id
         order_index = index[condition]
-        dispatcher.utter_message(text=f'The order with the ID {order_id} will be changed...')
+        dispatcher.utter_message(text=f'The order with the ID {order_id} is updating...')
         if len(order_index) == 0:
             # order not found
             # send message to the user
             dispatcher.utter_message(text=f'The order with the ID {order_id} has not been found.')
         else:
-            # edit row
-            plate = df.loc[order_index[0], 'Plate']
-            drinkk = df.loc[order_index[0], 'Drink']
-            df.loc[order_index[0], 'Time'] = time 
-            #dispatcher.utter_message(text=f'PLATE {plate}')
+            # edit time
+            df.loc[order_index[0], 'Time'] = time
             # save the file
             df.to_csv(orders_filename, index=False)
             dispatcher.utter_message(text=f'The order with the ID {order_id} has been updated with success!')
 
         return []
+
 
 class ActionEditOrderRecipe(Action):
 
@@ -159,15 +152,13 @@ class ActionEditOrderRecipe(Action):
             dispatcher.utter_message(text=f'The order with the ID {order_id} has not been found.')
         else:
             # edit row
-            drinkk = df.loc[order_index[0], 'Drink']
-            time = df.loc[order_index[0], 'Time']
-            df.loc[order_index[0], 'Plate'] = food 
-            #dispatcher.utter_message(text=f'PLATE {plate}')
+            df.loc[order_index[0], 'Plate'] = food
             # save the file
             df.to_csv(orders_filename, index=False)
             dispatcher.utter_message(text=f'The order with the ID {order_id} has been updated with success!')
 
         return []
+
 
 class ActionEditOrderDrink(Action):
 
@@ -194,10 +185,7 @@ class ActionEditOrderDrink(Action):
             dispatcher.utter_message(text=f'The order with the ID {order_id} has not been found.')
         else:
             # edit row
-            plate = df.loc[order_index[0], 'Plate']
-            time = df.loc[order_index[0], 'Time']
             df.loc[order_index[0], 'Drink'] = drink
-            #dispatcher.utter_message(text=f'PLATE {plate}')
             # save the file
             df.to_csv(orders_filename, index=False)
             dispatcher.utter_message(text=f'The order with the ID {order_id} has been updated with success!')
@@ -234,7 +222,6 @@ class ActionDeleteOrder(Action):
             df.to_csv(orders_filename, index=False)
             dispatcher.utter_message(text=f'The order with the ID {order_id} has been deleted with success!')
         return [SlotSet('order_id', None)]
-        #return []
 
 
 class ActionTypeDiet(Action):
@@ -261,8 +248,7 @@ class ActionTypeDiet(Action):
             line_select = randint(0, n_rows - 1)
 
             # reader.readline(line_select)
-            dispatcher.utter_message(text=f'We have plates adapt you, please wait a second ({diet, line_select})')
-            dispatcher.utter_message(text=f'We suggest you: ({rows[line_select]})')
+            dispatcher.utter_message(text=f'We suggest you: {rows[line_select][0]}')
 
 
         else:
@@ -333,10 +319,11 @@ class ActionTypePlates(Action):
 
             for line in range(len(df) - 1):
                 suggerimento = df.loc[[line]]
-                dispatcher.utter_message(text=f'Name: {suggerimento.name.to_string(index=False)}')
-                dispatcher.utter_message(text=f'Ingredients: {suggerimento.ingredients.to_string(index=False)}')
+                dispatcher.utter_message(
+                    text=f'Name: {suggerimento.name.to_string(index=False)}\nIngredients: {suggerimento.ingredients.to_string(index=False)}')
 
         return []
+
 
 class ActionRegionFood(Action):
 
@@ -401,9 +388,10 @@ class ActionRegionFood(Action):
 
             for line in range(len(df) - 1):
                 suggerimento = df.loc[[line]]
-                dispatcher.utter_message(text=f'Name: {suggerimento.name.to_string(index=False)}')
-                dispatcher.utter_message(text=f'Ingredients: {suggerimento.ingredients.to_string(index=False)}')
+                dispatcher.utter_message(
+                    text=f'Name: {suggerimento.name.to_string(index=False)}\nIngredients: {suggerimento.ingredients.to_string(index=False)}')
         return []
+
 
 class ActionIntollerant(Action):
 
@@ -470,12 +458,11 @@ class ActionIntollerant(Action):
             dispatcher.utter_message(text=f'We don\'t have plates adapt you, please call the restaurant')
         else:
             dispatcher.utter_message(text=f'We have plates adapt you, please wait a second')
-            dispatcher.utter_message(text=f'Intollerance : {intollerance}')
             for line in range(len(df) - 1):
                 suggerimento = df.loc[[line]]
-                dispatcher.utter_message(text=f'Name: {suggerimento.name.to_string(index=False)}')
-                dispatcher.utter_message(text=f'Ingredients: {suggerimento.ingredients.to_string(index=False)}')
+                dispatcher.utter_message(text=f'Name: {suggerimento.name.to_string(index=False)}\nIngredients: {suggerimento.ingredients.to_string(index=False)}')
         return []
+
 
 class ActionPreferenceIngredients(Action):
 
@@ -489,8 +476,6 @@ class ActionPreferenceIngredients(Action):
         # get slots values
         ingredient = str(tracker.get_slot('ingredients'))
         ingredient = ingredient.strip()
-
-        dispatcher.utter_message(text=f'Ingredient searched : {ingredient}')
 
         # check if files exists
         filename_vegan = f'./files/vegan.csv'
@@ -515,8 +500,6 @@ class ActionPreferenceIngredients(Action):
                 list_ingredients = ingredients.split('-')
                 list_ingredients = [s.strip() for s in list_ingredients]
                 if ingredient in list_ingredients:
-                    # dispatcher.utter_message(text=f'Ingredient searched : {ingredient}')
-                    # dispatcher.utter_message(text=f'Ingredients : {list_ingredients}')
                     df = df.append({'name': riga[0], 'ingredients': riga[1]}, ignore_index=True)
 
         # leggo il file vegetarian
@@ -534,8 +517,6 @@ class ActionPreferenceIngredients(Action):
                 list_ingredients = ingredients.split('-')
                 list_ingredients = [s.strip() for s in list_ingredients]
                 if ingredient in list_ingredients:
-                    # dispatcher.utter_message(text=f'Ingredient searched : {ingredient}')
-                    # dispatcher.utter_message(text=f'Ingredients : {list_ingredients}')
                     df = df.append({'name': riga[0], 'ingredients': riga[1]}, ignore_index=True)
 
         # leggo il file vegan
@@ -564,9 +545,11 @@ class ActionPreferenceIngredients(Action):
             dispatcher.utter_message(text=f'We have plates adapt you, please wait a second')
             for line in range(len(df) - 1):
                 suggerimento = df.loc[[line]]
-                dispatcher.utter_message(text=f'Name: {suggerimento.name.to_string(index=False)}')
-                dispatcher.utter_message(text=f'Ingredients: {suggerimento.ingredients.to_string(index=False)}')
+                dispatcher.utter_message(
+                    text=f'Name: {suggerimento.name.to_string(index=False)}\nIngredients: {suggerimento.ingredients.to_string(index=False)}')
         return []
+
+
 # Repo API for diets API https://www.programmableweb.com/news/10-most-popular-food-apis-2021/brief/2021/05/05
 # API 1 : https://spoonacular.com/food-api
 
@@ -628,31 +611,26 @@ class ActionShowMenu(Action):
                 df = df.append({'name': riga[0], 'ingredients': riga[1]}, ignore_index=True)
 
         dispatcher.utter_message(text=f'We have plates adapt you, please wait a second')
-        #i = 0
         for line in range(len(df) - 1):
-            #i = i+1  #number of recipes in the menu
             suggerimento = df.loc[[line]]
-            dispatcher.utter_message(text=f'------------ Name: {suggerimento.name.to_string(index=False)}---------------')
+            dispatcher.utter_message(
+                text=f'------------ Name: {suggerimento.name.to_string(index=False)}---------------')
             dispatcher.utter_message(text=f'Ingredients: {suggerimento.ingredients.to_string(index=False)}')
             dispatcher.utter_message(text=f'\n')
-        #dispatcher.utter_message(text=f'{i}')
         return []
 
 
-class ActionCaloricIntake(Action):                  #da fare
-    #Andare a leggere nel file la colonna delle calorie tramite la ricetta inserita
+class ActionCaloricIntake(Action):  # da fare
+    # Andare a leggere nel file la colonna delle calorie tramite la ricetta inserita
     def name(self) -> Text:
-        return 'action_caloric_intake'  
+        return 'action_caloric_intake'
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text=f'Action Caloric Intake')
 
         recipe = str(tracker.get_slot('food'))
-        recipe = recipe.strip()
-
-        dispatcher.utter_message(text=f'recipe wanted : {recipe}')
+        recipe = recipe.strip().lower()
 
         # check if files exists
         filename_vegan = f'./files/vegan.csv'
@@ -717,25 +695,20 @@ class ActionCaloricIntake(Action):                  #da fare
             dispatcher.utter_message(text=f'Calories of you recipe:')
             suggerimento = df.loc[[0]]
             dispatcher.utter_message(text=f'{suggerimento.calories.to_string(index=False)}')
-        #return [SlotSet('food', None)]      #per ripulire lo slot finita una storia
-        #QUESTO ULTIMO PASSAGGIO E' IMPORTANTISSIMO, IN QUANTO SE NON FATTO E VIENE RIPETUTA LA STESSA OPERAZIONE NUOVAMENTE MANTEREBBE IN MEMORIA IL VECCHIO ID SE SI RICHIAMA METODO SENZA ALCUN ID (EX. delete (senza niente dopo))!
         return []
 
-class ActionSuggestionDrink(Action):            #da fare
-    #Andare a leggere nel file la lista di drink suggeriti e restuirne uno a random
+
+class ActionSuggestionDrink(Action):  # da fare
+    # Andare a leggere nel file la lista di drink suggeriti e restuirne uno a random
 
     def name(self) -> Text:
-        return 'action_suggest_drink'  
+        return 'action_suggest_drink'
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text=f'Action Suggest a Drink')
-
         recipe = str(tracker.get_slot('food'))
-        recipe = recipe.strip()
-
-        dispatcher.utter_message(text=f'recipe wanted : {recipe}')
+        recipe = recipe.strip().lower()
 
         # check if files exists
         filename_vegan = f'./files/vegan.csv'
@@ -759,8 +732,6 @@ class ActionSuggestionDrink(Action):            #da fare
                 drinks = riga[5].strip()
                 drinks = drinks[1:-1]
                 if recipee == recipe:
-                    # dispatcher.utter_message(text=f'Ingredient searched : {ingredient}')
-                    # dispatcher.utter_message(text=f'Ingredients : {list_ingredients}')
                     df = df.append({'drinks': riga[5]}, ignore_index=True)
 
         # leggo il file vegetarian
@@ -777,8 +748,6 @@ class ActionSuggestionDrink(Action):            #da fare
                 drinks = riga[5].strip()
                 drinks = drinks[1:-1]
                 if recipee == recipe:
-                    # dispatcher.utter_message(text=f'Ingredient searched : {ingredient}')
-                    # dispatcher.utter_message(text=f'Ingredients : {list_ingredients}')
                     df = df.append({'drinks': riga[5]}, ignore_index=True)
 
         # leggo il file omnivorous
@@ -796,38 +765,35 @@ class ActionSuggestionDrink(Action):            #da fare
                 drinks = riga[5].strip()
                 drinks = drinks[1:-1]
                 if recipee == recipe:
-                    #dispatcher.utter_message(text=f'recipe found')
-                    # dispatcher.utter_message(text=f'Ingredients : {list_ingredients}')
                     df = df.append({'drinks': riga[5]}, ignore_index=True)
 
         if df.empty:
             dispatcher.utter_message(text=f'We don\'t have the recipe you choose, choose another recipe in the menu')
         else:
-            dispatcher.utter_message(text=f'drinks suggested for your choice are:')
+            dispatcher.utter_message(text=f'Drinks suggested for your choice are:')
             suggerimento = df.loc[[0]]
             dispatcher.utter_message(text=f'{suggerimento.drinks.to_string(index=False)}')
-        #return [SlotSet('food', None)]      #per ripulire lo slot finita una storia
-        #QUESTO ULTIMO PASSAGGIO E' IMPORTANTISSIMO, IN QUANTO SE NON FATTO E VIENE RIPETUTA LA STESSA OPERAZIONE NUOVAMENTE MANTEREBBE IN MEMORIA IL VECCHIO ID SE SI RICHIAMA METODO SENZA ALCUN ID (EX. delete (senza niente dopo))!
         return []
 
 
 class ActionSuggestion(Action):
-    #Pescare da gli slot i valori inseriti e salvare nei file
+    # Pescare da gli slot i valori inseriti e salvare nei file
     def name(self) -> Text:
-        return 'action_suggest_new_receipt'  
+        return 'action_suggest_new_receipt'
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text=f'Action Suggest a new Receipt')
         # get slots values
-        title_receipt = str(tracker.get_slot('receipt'))    #Devi modificare qua, così puoi suggerire di inserire solo uno di quelli base che hai scritto te, creare uno slot solo con stirnghe di numero variabile di caratteri
+        title_receipt = str(tracker.get_slot(
+            'receipt'))  # Devi modificare qua, così puoi suggerire di inserire solo uno di quelli base che hai scritto te, creare uno slot solo con stirnghe di numero variabile di caratteri
         title_receipt = title_receipt.strip()
-        type_plate_receipt = str(tracker.get_slot('plates_suggest'))
+        type_plate_receipt = str(tracker.get_slot('plates'))
         type_plate_receipt = type_plate_receipt.strip()
-        dispatcher.utter_message(text=f'Title suggest receipt: {title_receipt} - Type Plate Suggest: {type_plate_receipt}')
+        dispatcher.utter_message(
+            text=f'Title suggest receipt: {title_receipt} - Type Plate Suggest: {type_plate_receipt}')
 
-         # check if suggest file exists
+        # check if suggest file exists
         if os.path.exists(suggest_filename):
             # append if already exists
             file = open(suggest_filename, 'a', newline='')
@@ -840,6 +806,5 @@ class ActionSuggestion(Action):
         writer = csv.writer(file)
         writer.writerow([title_receipt, type_plate_receipt])
         file.close()
-        dispatcher.utter_message(text=f'Thanks for suggest')
+        dispatcher.utter_message(text=f'Thanks for the suggestion.')
         return []
-

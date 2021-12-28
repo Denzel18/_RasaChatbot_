@@ -32,7 +32,7 @@ nlu:
 - intent: edit_order_with_id
   examples: |
     - Edit Order with ID [AA98097](order_id)
-    - Edit Order with ID [AA98098](order_id)
+    - Edit Order [AA14578](order_id)
 
 - intent: edit_order_time
   examples: |
@@ -53,18 +53,18 @@ nlu:
 - intent: delete_order_with_id
   examples: |
       - Delete Order with ID [AA54367](order_id)
-      - Delete Order with ID [AA54347](order_id)
- 
+      - Delete Order [AA25478](order_id)
+
 - intent: show_order_id
   examples: |
     - Show order with ID [AA54367](order_id)
-    - Show order with ID [AA54267](order_id)
+    - Show order [AA23658](order_id)
 
 - intent: show_menu
   examples: |
     - Show me the entire menu
     - print me the menu
-    - Show me the menu 
+    - Show me the menu
     - Let me see the menu
 
 - intent: intolerant
@@ -93,7 +93,7 @@ nlu:
     - I want to try something from [emilia romagna](regions)
     - Visualize dishes from [emilia romagna](regions)
 
-# - intent: preferences #da rivedere .... 
+# - intent: preferences #da rivedere ....
 #   examples: |
 #     - I want eat [pasta](food)
 #     - I want eat [pizza](food)
@@ -109,25 +109,33 @@ nlu:
 #     - The ID is [AA45729](order_id)
 #     - [AA27417](order_id)
 
-- intent: alternatives_of_interactions
+- intent: help
   examples: |
     - What can i do?
-    - Help  
-    - help 
+    - Help
+    - help
     - please help
-  
+    - What can I ask you?
+    - What are your functions?
+    - What's your business?
+    - What should I ask you?
+    - How can you help me?
+    - I need your help
+
 - intent: caloric_intake
   examples: |
     - I would like to know the caloric intake for [pasta al pesto](food)
     - I would like to know the caloric intake for [pasta e fichi](food)
+    - What is the caloric intake for [Pizza](food)?
 
 - intent: suggest_drink
   examples: |
-    - suggest a drink with [Rice](food)
+    - Suggest a drink with [Rice](food)
     - Suggest me a drink for [Salmon] (food)
+    - Can you suggest me a drink for [Pizza] (food)?
 
 - intent: add_drink_to_order
-  examples: | 
+  examples: |
     - add to my order [water](drink)
     - add to my order [cola](drink)
     - add to my order [wine](drink)
@@ -137,25 +145,39 @@ nlu:
   examples: |
     - propose new plate
     - propose new plates
+    - Can I propose a new dish?
 
 - intent: title_receipt
   examples: |
-    - title plate suggesting [pasta al pesto](receipt)
-    - title plate suggesting [pasta al cavolo](receipt)
-    - title plate suggesting [pizza margherita](receipt)
-    - title plate suggesting [pasta e fichi](receipt)
+    - title plate suggesting [pasta ai fichi](receipt)
+    - title plate suggesting [pizza ananas](receipt)
+    - title plate suggesting [anatra arrosto](receipt)
+    - title plate suggesting [strudel](receipt)
 
 - intent: type_plate_receipt
   examples: |
-    - type plate suggesting [main dish](plates_suggest)
-    - type plate suggesting [side dish](plates_suggest)
-    - type plate suggesting [dessert](plates_suggest)
-    - type plate suggesting [second dish](plates_suggest)
+    - type plate suggesting [main dish](plates)
+    - type plate suggesting [side dish](plates)
+    - type plate suggesting [dessert](plates)
+    - type plate suggesting [second dish](plates)
 
 - intent: nlu_fallback
   examples: |
-    - Quo vado ? 
+    - Quo vado ?
     - Bella Zio ...
+
+- intent: start
+  examples: |
+    - start
+    - open
+    - begin
+    - init
+
+- intent: stop
+  examples: |
+    - quit
+    - close
+    - stop
 
 - regex: order_id
   examples: |
@@ -177,10 +199,10 @@ nlu:
     - Tuna
     - Vegetables
     - Eggs
-    - pasta e fichi  
-    - carbonara 
-    - pasta al pesto 
-    - pizza margherita 
+    - pasta e fichi
+    - carbonara
+    - pasta al pesto
+    - pizza margherita
     - Vegetarian Burrito Bowl with Avocado Crema
     - Pumpkin Curry Soup
     - Falafel_burgers
@@ -211,13 +233,6 @@ nlu:
     - dessert
     - side dish
 
-- lookup: plates_suggest
-  examples: |
-    - main dish
-    - second dish
-    - dessert
-    - side dish
-
 - lookup: regions
   examples: |
     - marche
@@ -242,21 +257,21 @@ nlu:
     - chilli pepper
     - cheese
 
-- lookup: drink 
+- lookup: drink
   examples: |
-    - cola 
+    - cola
     - wine
-    - water 
+    - water
     - beer
-    - vodka 
+    - vodka
     - tea
     - coffee
 
 - lookup: receipt
   examples: |
-    - pasta e fichi   
+    - pasta ai fichi
     - pizza ananas
     - strudel
-    - gnocchetti al ragù cinghiale
-    - gelato al cioccolato salato flitto
-    - anatra arrosto 
+    - gnocchetti al cinghiale
+    - gelato fritto
+    - anatra arrosto
